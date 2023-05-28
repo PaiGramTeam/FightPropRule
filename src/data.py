@@ -119,6 +119,8 @@ class Genshin(Base):
 
 class Starrail(Base):
     character = [
+        '开拓者·毁灭',
+        '开拓者·存护',
         '三月七',
         '丹恒',
         '姬子',
