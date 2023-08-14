@@ -18,7 +18,7 @@ def main(page: Page):
         top_view = page.views[-1]
         page.go(top_view.route)
 
-    page.title = "PropScoreEditor"
+    page.title = "FightPropRuleEditor"
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
     page.on_route_change = on_route_change

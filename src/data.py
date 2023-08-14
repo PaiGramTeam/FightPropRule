@@ -1,89 +1,47 @@
 import json
 import flet as ft
 
+from httpx import get
 from pathlib import Path
 from typing import List, Dict, Optional
 
-data_path = Path("data")
-data_path.mkdir(exist_ok=True)
-genshin_path = data_path / "genshin.json"
-starrail_path = data_path / "starrail.json"
+genshin_path = Path("FightPropRule_genshin.json")
+starrail_path = Path("FightPropRule_starrail.json")
+genshin_avatars_path = Path("avatars_genshin.json")
+starrail_avatars_path = Path("avatars_starrail.json")
+genshin_api = "https://api.ambr.top/v2/chs/avatar"
+starrail_api = "https://api.yatta.top/hsr/v2/cn/avatar"
 
 
 class Base:
     character: List[str]
     type: List[str]
 
+    def get_data_from_file(self, path: Path):
+        if path.exists():
+            with open(path, "r", encoding="utf-8") as f:
+                self.character = json.load(f)
+        else:
+            self.character = []
+
+    def save_data_to_file(self, path: Path):
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(self.character, f, ensure_ascii=False, indent=4)
+
+    def get_data_from_api(self, api: str, ignore_id_start: str = None):
+        if ignore_id_start is None:
+            ignore_id_start = "-1"
+        res = get(api)
+        if res.status_code == 200:
+            data = res.json()
+            self.character = list({
+                i.get("name")
+                for i in data.get("data", {}).get("items", {}).values()
+                if not str(i.get("id", 0)).startswith(ignore_id_start)
+            })
+
 
 class Genshin(Base):
-    character = [
-        '旅行者',
-        '神里绫华',
-        '丽莎',
-        '芭芭拉',
-        '凯亚',
-        '迪卢克',
-        '雷泽',
-        '安柏',
-        '温迪',
-        '香菱',
-        '北斗',
-        '行秋',
-        '魈',
-        '凝光',
-        '可莉',
-        '钟离',
-        '菲谢尔',
-        '班尼特',
-        '达达利亚',
-        '诺艾尔',
-        '七七',
-        '重云',
-        '甘雨',
-        '阿贝多',
-        '迪奥娜',
-        '莫娜',
-        '刻晴',
-        '砂糖',
-        '辛焱',
-        '罗莎莉亚',
-        '胡桃',
-        '枫原万叶',
-        '烟绯',
-        '宵宫',
-        '托马',
-        '优菈',
-        '雷电将军',
-        '早柚',
-        '珊瑚宫心海',
-        '五郎',
-        '九条裟罗',
-        '荒泷一斗',
-        '八重神子',
-        '鹿野院平藏',
-        '夜兰',
-        '埃洛伊',
-        '申鹤',
-        '云堇',
-        '久岐忍',
-        '神里绫人',
-        '柯莱',
-        '多莉',
-        '提纳里',
-        '妮露',
-        '赛诺',
-        '坎蒂丝',
-        '纳西妲',
-        '莱依拉',
-        '流浪者',
-        '珐露珊',
-        '瑶瑶',
-        '艾尔海森',
-        '迪希雅',
-        '米卡',
-        '卡维',
-        '白术',
-    ]
     type = [
         '基础血量',
         '基础攻击力',
@@ -116,37 +74,15 @@ class Genshin(Base):
         '治疗加成',
     ]
 
+    def __init__(self):
+        self.get_data_from_file(genshin_avatars_path)
+
+    def refresh(self):
+        self.get_data_from_api(genshin_api)
+        self.save_data_to_file(genshin_avatars_path)
+
 
 class Starrail(Base):
-    character = [
-        '开拓者·毁灭',
-        '开拓者·存护',
-        '三月七',
-        '丹恒',
-        '姬子',
-        '瓦尔特',
-        '卡芙卡',
-        '银狼',
-        '阿兰',
-        '艾丝妲',
-        '黑塔',
-        '布洛妮娅',
-        '希儿',
-        '希露瓦',
-        '杰帕德',
-        '娜塔莎',
-        '佩拉',
-        '克拉拉',
-        '桑博',
-        '虎克',
-        '青雀',
-        '停云',
-        '罗刹',
-        '景元',
-        '素裳',
-        '彦卿',
-        '白露',
-    ]
     type = [
         "攻击力百分比",
         "攻击力",
@@ -170,6 +106,14 @@ class Starrail(Base):
         "雷属性伤害提高百分比",
         "风属性伤害提高百分比",
     ]
+
+    def __init__(self):
+        self.get_data_from_file(starrail_avatars_path)
+
+    def refresh(self):
+        self.get_data_from_api(starrail_api, "800")
+        self.character.extend(['开拓者·毁灭', '开拓者·存护', ])
+        self.save_data_to_file(starrail_avatars_path)
 
 
 class Core:
