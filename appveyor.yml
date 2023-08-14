@@ -1,3 +1,8 @@
+branches:
+  only:
+    - main
+    - /^v\d+\.\d+$/
+
 image:
 - Visual Studio 2019
 - macOS
@@ -14,7 +19,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name PropScoreEditor --product-name PropScoreEditor
+- flet pack main.py --name FightPropRuleEditor --product-name FightPropRuleEditor
 
 test: off
 
@@ -35,10 +40,10 @@ for:
     - image: Visual Studio 2019
 
   after_build:
-  - 7z a PropScoreEditor-windows.zip %CD%\dist\*.exe
+  - 7z a FightPropRuleEditor-windows.zip %CD%\dist\*.exe
 
   artifacts:
-  - path: PropScoreEditor-windows.zip
+  - path: FightPropRuleEditor-windows.zip
 
 #
 #   macOS package
@@ -49,10 +54,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf PropScoreEditor-macos.tar.gz -C dist PropScoreEditor.app
+  - tar -czvf FightPropRuleEditor-macos.tar.gz -C dist FightPropRuleEditor.app
 
   artifacts:
-  - path: PropScoreEditor-macos.tar.gz
+  - path: FightPropRuleEditor-macos.tar.gz
 
 #
 #   Linux package
@@ -63,7 +68,7 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf PropScoreEditor-linux.tar.gz -C dist PropScoreEditor
+  - tar -czvf FightPropRuleEditor-linux.tar.gz -C dist FightPropRuleEditor
 
   artifacts:
-  - path: PropScoreEditor-linux.tar.gz
+  - path: FightPropRuleEditor-linux.tar.gz
