@@ -58,9 +58,7 @@ def edit_view(page: Page):
                         "": ft.RoundedRectangleBorder(),
                     }
                 ),
-                data=(
-                    name,
-                ),
+                data=(name,),
                 on_click=choose_character,
                 disabled=False,
             ),
@@ -102,9 +100,7 @@ def edit_view(page: Page):
 
     def select_all(_):
         prop_list_controls = prop_list.controls.copy()
-        have_selection_some = len(
-            list(filter(lambda prop_: prop_.value, prop_list_controls))
-        ) < len(prop_list_controls)
+        have_selection_some = len(list(filter(lambda prop_: prop_.value, prop_list_controls))) < len(prop_list_controls)
 
         if have_selection_some:
             for prop in prop_list_controls:

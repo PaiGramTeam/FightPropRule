@@ -8,7 +8,6 @@ from src.data import Core, genshin_path, Genshin, starrail_path, Starrail, Page
 
 
 def choose_view(page: Page):
-
     def genshin(_e):
         page.core = Core(genshin_path, Genshin())
         page.go("/edit")

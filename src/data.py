@@ -34,44 +34,46 @@ class Base:
         res = get(api)
         if res.status_code == 200:
             data = res.json()
-            self.character = list({
-                i.get("name")
-                for i in data.get("data", {}).get("items", {}).values()
-                if not str(i.get("id", 0)).startswith(ignore_id_start)
-            })
+            self.character = list(
+                {
+                    i.get("name")
+                    for i in data.get("data", {}).get("items", {}).values()
+                    if not str(i.get("id", 0)).startswith(ignore_id_start)
+                }
+            )
 
 
 class Genshin(Base):
     type = [
-        '基础血量',
-        '基础攻击力',
-        '基础防御力',
-        '攻击力',
-        '攻击力百分比',
-        '生命值',
-        '生命值百分比',
-        '防御力',
-        '防御力百分比',
-        '元素精通',
-        '暴击率',
-        '暴击伤害',
-        '元素充能效率',
-        '火元素抗性',
-        '雷元素抗性',
-        '冰元素抗性',
-        '水元素抗性',
-        '风元素抗性',
-        '岩元素抗性',
-        '草元素抗性',
-        '火元素伤害加成',
-        '雷元素伤害加成',
-        '冰元素伤害加成',
-        '水元素伤害加成',
-        '风元素伤害加成',
-        '岩元素伤害加成',
-        '草元素伤害加成',
-        '物理伤害加成',
-        '治疗加成',
+        "基础血量",
+        "基础攻击力",
+        "基础防御力",
+        "攻击力",
+        "攻击力百分比",
+        "生命值",
+        "生命值百分比",
+        "防御力",
+        "防御力百分比",
+        "元素精通",
+        "暴击率",
+        "暴击伤害",
+        "元素充能效率",
+        "火元素抗性",
+        "雷元素抗性",
+        "冰元素抗性",
+        "水元素抗性",
+        "风元素抗性",
+        "岩元素抗性",
+        "草元素抗性",
+        "火元素伤害加成",
+        "雷元素伤害加成",
+        "冰元素伤害加成",
+        "水元素伤害加成",
+        "风元素伤害加成",
+        "岩元素伤害加成",
+        "草元素伤害加成",
+        "物理伤害加成",
+        "治疗加成",
     ]
 
     def __init__(self):
@@ -112,7 +114,12 @@ class Starrail(Base):
 
     def refresh(self):
         self.get_data_from_api(starrail_api, "800")
-        self.character.extend(['开拓者·毁灭', '开拓者·存护', ])
+        self.character.extend(
+            [
+                "开拓者·毁灭",
+                "开拓者·存护",
+            ]
+        )
         self.save_data_to_file(starrail_avatars_path)
 
 
