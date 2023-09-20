@@ -15,6 +15,9 @@ def edit_view(page: Page):
     prop_list = ft.ListView(
         expand=True,
     )
+    prop_control_list = ft.ListView(
+        expand=True,
+    )
     top_title = ft.Ref[ft.Text]()
 
     def update_top_title(title: str):
@@ -26,25 +29,62 @@ def edit_view(page: Page):
         page.go("/")
         page.update()
 
-    def choose_character(e=None):
+    def choose_character(e: ft.ControlEvent = None):
         if e is not None:
             ch_name = e.control.data[0]
             page.current_name = ch_name
         else:
             ch_name = page.current_name
-        # 获取课程任务列表
         page.update()
         update_top_title(ch_name)
         prop_list.controls.clear()
         for i in page.core.model.type:
-            prop_list.controls.append(
-                ft.Checkbox(
+            container = ft.Container(
+                content=ft.Checkbox(
                     label=i,
                     value=page.core.get_value(ch_name, i),
-                    disabled=False,
+                    disabled=True,
                     data=i,
-                )
+                ),
+                on_click=choose_prop,
             )
+            prop_list.controls.append(container)
+        page.update()
+
+    def prop_status_change(e: ft.ControlEvent = None):
+        value = e.data == "true"
+        if not value:
+            page.core.remove_prop_value(page.current_name, page.current_prop_name)
+        else:
+            page.core.set_prop_value(page.current_name, page.current_prop_name, "0.0")
+
+    def prop_value_change(e: ft.ControlEvent = None):
+        try:
+            page.core.set_prop_value(page.current_name, page.current_prop_name, e.data)
+        except ValueError:
+            show_snack_bar(page, "值不正确", ft.colors.ERROR)
+
+    def choose_prop(e: ft.ControlEvent = None):
+        checkbox: ft.Checkbox = e.control.content
+        prop_name = checkbox.data
+        page.current_prop_name = prop_name
+        prop_control_list.controls.clear()
+        prop_control_list.controls.append(
+            ft.Column(
+                [
+                    ft.Switch(
+                        label=prop_name,
+                        value=checkbox.value,
+                        on_change=prop_status_change,
+                    ),
+                    ft.TextField(
+                        label="权重",
+                        value=page.core.get_prop_value(page.current_name, prop_name),
+                        on_change=prop_value_change,
+                    ),
+                ]
+            )
+        )
         page.update()
 
     for index, name in enumerate(page.core.model.character):
@@ -70,7 +110,7 @@ def edit_view(page: Page):
                 lambda x: x is not None,
                 map(
                     lambda x: x.data if x.value else None,
-                    prop_list.controls.copy(),
+                    [i.content for i in prop_list.controls.copy()],
                 ),
             )
         )
@@ -84,7 +124,7 @@ def edit_view(page: Page):
             choose_character()
             page.update()
 
-        page.core.change_value(page.current_name, choose_results)
+        page.core.save_value()
         success_dialog = ft.AlertDialog(
             modal=True,
             title=ft.Text("保存成功"),
@@ -96,18 +136,6 @@ def edit_view(page: Page):
         )
         page.dialog = success_dialog
         success_dialog.open = True
-        page.update()
-
-    def select_all(_):
-        prop_list_controls = prop_list.controls.copy()
-        have_selection_some = len(list(filter(lambda prop_: prop_.value, prop_list_controls))) < len(prop_list_controls)
-
-        if have_selection_some:
-            for prop in prop_list_controls:
-                prop.value = True
-        else:
-            for i in prop_list_controls:
-                i.value = not i.value if i.disabled is False else i.value
         page.update()
 
     page.views.append(
@@ -132,11 +160,6 @@ def edit_view(page: Page):
                                                 on_click=back_choose,
                                             ),
                                             ft.ElevatedButton(
-                                                "全选",
-                                                icon=ft.icons.ALL_INBOX,
-                                                on_click=select_all,
-                                            ),
-                                            ft.ElevatedButton(
                                                 "保存",
                                                 icon=ft.icons.DONE,
                                                 on_click=save,
@@ -156,7 +179,13 @@ def edit_view(page: Page):
                     height=1,
                 ),
                 ft.Row(
-                    [name_list, ft.VerticalDivider(width=1), prop_list],
+                    [
+                        name_list,
+                        ft.VerticalDivider(width=1),
+                        prop_list,
+                        ft.VerticalDivider(width=1),
+                        prop_control_list,
+                    ],
                     expand=True,
                     spacing=0,
                 ),

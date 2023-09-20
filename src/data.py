@@ -127,7 +127,7 @@ class Core:
     def __init__(self, path: Path, model: Base):
         self.path = path
         self.model = model
-        self.data: Dict[str, List[str]] = {}
+        self.data: Dict[str, Dict[str, float]] = {}
         self.get_data_from_file()
 
     def get_data_from_file(self):
@@ -140,17 +140,31 @@ class Core:
             json.dump(self.data, f, ensure_ascii=False, indent=4)
 
     def get_value(self, ch_name: str, type_name: str) -> bool:
-        return type_name in self.data.get(ch_name, [])
+        return type_name in self.data.get(ch_name, {})
 
-    def change_value(self, ch_name: str, type_name: List[str]):
-        if len(type_name):
-            self.data[ch_name] = type_name
-        else:
-            if ch_name in self.data:
-                del self.data[ch_name]
+    def get_prop_value(self, ch_name: str, type_name: str) -> str:
+        return str(self.data.get(ch_name, {}).get(type_name, "0.0"))
+
+    def set_prop_value(self, ch_name: str, type_name: str, value: str):
+        if ch_name not in self.data:
+            self.data[ch_name] = {}
+        self.data[ch_name][type_name] = float(value)
+
+    def remove_prop_value(self, ch_name: str, type_name: str):
+        if ch_name not in self.data:
+            return
+        if type_name not in self.data[ch_name]:
+            return
+        self.data[ch_name] = {
+            k: v for k, v in self.data[ch_name].copy().items() if k != type_name
+        }
+
+    def save_value(self):
+        self.data = {k: v for k, v in self.data.copy().items() if v}
         self.save_data_to_file()
 
 
 class Page(ft.Page):
     core: Core
     current_name: Optional[str] = None
+    current_prop_name: Optional[str] = None
