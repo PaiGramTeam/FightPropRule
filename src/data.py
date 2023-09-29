@@ -155,9 +155,7 @@ class Core:
             return
         if type_name not in self.data[ch_name]:
             return
-        self.data[ch_name] = {
-            k: v for k, v in self.data[ch_name].copy().items() if k != type_name
-        }
+        self.data[ch_name] = {k: v for k, v in self.data[ch_name].copy().items() if k != type_name}
 
     def save_value(self):
         self.data = {k: v for k, v in self.data.copy().items() if v}
