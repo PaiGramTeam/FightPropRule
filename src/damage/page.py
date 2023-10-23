@@ -13,6 +13,8 @@ from .models import (
     CharacterDamageSkillDamageKey,
     CharacterConfig,
     Weapon as WeaponModel,
+    Element4OP,
+    Element8OP,
 )
 from .weapon import weapon
 
@@ -168,16 +170,23 @@ def edit_damage_view(page: "Page"):
     def gen_switch_or_text(
         ch_name, config: CharacterConfig, get_config_value, on_change
     ):
+        ele = None
         if isinstance(config.default, bool):
             class_ = ft.Checkbox
+        elif config.type in ["element4", "element8"]:
+            class_ = ft.Dropdown
+            ele = Element4OP if config.type == "element4" else Element8OP
         else:
             class_ = ft.TextField
-        return class_(
+        ins = class_(
             label=config.title,
             value=get_config_value(ch_name, config),
             data=config,
             on_change=on_change,
         )
+        if class_ == ft.Dropdown:
+            ins.options = ele
+        return ins
 
     def update_config_component(
         com: List,

@@ -1,7 +1,50 @@
+import flet
 from enum import Enum
 from typing import List, Dict, Any, Optional
-
 from pydantic import BaseModel
+
+Element4OP = [
+    flet.dropdown.Option(key="Cyro", text="冰元素"),
+    flet.dropdown.Option(key="Electro", text="雷元素"),
+    flet.dropdown.Option(key="Hydro", text="水元素"),
+    flet.dropdown.Option(key="Pyro", text="火元素"),
+]
+Element8OP = Element4OP + [
+    flet.dropdown.Option(key="Anemo", text="风元素"),
+    flet.dropdown.Option(key="Dendro", text="草元素"),
+    flet.dropdown.Option(key="Geo", text="岩元素"),
+    flet.dropdown.Option(key="Physical", text="物理伤害"),
+]
+
+
+class Element4(str, Enum):
+    Cyro = "Cyro"
+    """冰元素"""
+    Electro = "Electro"
+    """雷元素"""
+    Hydro = "Hydro"
+    """水元素"""
+    Pyro = "Pyro"
+    """火元素"""
+
+
+class Element8(str, Enum):
+    Cyro = "Cyro"
+    """冰元素"""
+    Electro = "Electro"
+    """雷元素"""
+    Hydro = "Hydro"
+    """水元素"""
+    Pyro = "Pyro"
+    """火元素"""
+    Anemo = "Anemo"
+    """风元素"""
+    Dendro = "Dendro"
+    """草元素"""
+    Geo = "Geo"
+    """岩元素"""
+    Physical = "Physical"
+    """物理伤害"""
 
 
 class CharacterDamageSkillDamageKey(str, Enum):
@@ -41,6 +84,7 @@ class CharacterConfig(BaseModel):
     default: Any
     name: str
     title: str
+    type: str
 
     class Config:
         frozen = False
