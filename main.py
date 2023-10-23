@@ -1,6 +1,7 @@
 import flet as ft
 
 from src.choose import choose_view
+from src.damage.page import edit_damage_view
 from src.data import Page
 from src.edit import edit_view
 
@@ -11,6 +12,8 @@ def main(page: Page):
         choose_view(page)
         if e.route == "/edit":
             edit_view(page)
+        elif e.route == "/edit_damage":
+            edit_damage_view(page)
         page.update()
 
     def view_pop():
@@ -18,7 +21,7 @@ def main(page: Page):
         top_view = page.views[-1]
         page.go(top_view.route)
 
-    page.title = "FightPropRuleEditor"
+    page.title = "GramBotMetadataEditor"
     page.vertical_alignment = "center"
     page.horizontal_alignment = "center"
     page.on_route_change = on_route_change

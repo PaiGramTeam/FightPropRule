@@ -1,3 +1,6 @@
 flet
 PyInstaller
 httpx
+Python-Genshin-Artifact
+genshin-artifact-core
+pydantic

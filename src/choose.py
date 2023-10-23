@@ -13,6 +13,10 @@ def choose_view(page: Page):
         page.go("/edit")
         show_snack_bar(page, "开始编辑原神圣遗物有效词条", ft.colors.GREEN)
 
+    def genshin_damage(_e):
+        page.go("/edit_damage")
+        show_snack_bar(page, "开始编辑原神伤害计算规则", ft.colors.GREEN)
+
     def starrail(_e):
         page.core = Core(starrail_path, Starrail())
         page.go("/edit")
@@ -32,7 +36,7 @@ def choose_view(page: Page):
                     [
                         ft.Container(
                             content=ft.Text(
-                                "FightPropRuleEditor",
+                                "GramBotMetadataEditor",
                                 size=50,
                             ),
                         ),
@@ -45,6 +49,11 @@ def choose_view(page: Page):
                             "Starrail",
                             icon=ft.icons.LOGIN,
                             on_click=starrail,
+                        ),
+                        ft.FilledButton(
+                            "GenshinDamage",
+                            icon=ft.icons.LOGIN,
+                            on_click=genshin_damage,
                         ),
                         ft.FilledButton(
                             "Refresh avatars",

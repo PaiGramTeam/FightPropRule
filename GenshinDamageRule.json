@@ -1,137 +1,141 @@
 {
-  "胡桃": {
-    "skills": [
-      {
-        "name": "普通攻击·往生秘传枪法-重击蒸发伤害",
-        "index": "7",
-        "damage_key": "vaporize"
-      },
-      {
-        "name": "安神秘法-蒸发伤害",
-        "index": "12",
-        "damage_key": "vaporize"
-      },
-      {
-        "name": "安神秘法-低血量蒸发伤害",
-        "index": "13",
-        "damage_key": "vaporize"
-      }
-    ],
-    "config_skill": {
-      "after_e": true
+    "胡桃": {
+        "skills": [
+            {
+                "name": "普通攻击·往生秘传枪法-重击蒸发伤害",
+                "index": 7,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "安神秘法-蒸发伤害",
+                "index": 12,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "安神秘法-低血量蒸发伤害",
+                "index": 13,
+                "damage_key": "vaporize"
+            }
+        ],
+        "config": {
+            "le_50": true
+        },
+        "config_skill": {
+            "after_e": true
+        },
+        "config_weapon": {
+            "StaffOfHoma": {
+                "be50_rate": 1
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 1
+            }
+        }
     },
-    "config": {
-      "le_50": true
+    "夜兰": {
+        "skills": [
+            {
+                "name": "普通攻击·潜形隐曜弓-破局矢伤害",
+                "index": 6,
+                "damage_key": "normal"
+            },
+            {
+                "name": "萦络纵命索-技能伤害",
+                "index": 11,
+                "damage_key": "normal"
+            },
+            {
+                "name": "渊图玲珑骰-技能伤害",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "渊图玲珑骰-玄掷玲珑伤害",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "team_element_count": 4
+        },
+        "config_skill": null,
+        "config_weapon": {
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            }
+        },
+        "artifact_config": null
     },
-    "config_weapon": {
-      "StaffOfHoma": {
-        "be50_rate": 1
-      }
-    },
-    "artifact_config": {
-      "config_crimson_witch_of_flames": {
-        "level": 1
-      }
+    "雷电将军": {
+        "skills": [
+            {
+                "name": "神变•恶曜开眼-技能伤害",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "神变•恶曜开眼协-同攻击伤害",
+                "index": 11,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-梦想一刀基础伤害",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-一段伤害",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-二段伤害",
+                "index": 14,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-三段伤害",
+                "index": 15,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-四段伤害-1",
+                "index": 16,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-四段伤害-2",
+                "index": 17,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-五段伤害",
+                "index": 18,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-重击伤害-1",
+                "index": 19,
+                "damage_key": "normal"
+            },
+            {
+                "name": "奥义•梦想真说-重击伤害-2",
+                "index": 20,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": {
+            "under_e": true,
+            "resolve_stack": 60
+        },
+        "config_weapon": {
+            "EngulfingLightning": {
+                "rate": 0
+            }
+        },
+        "artifact_config": null
     }
-  },
-  "夜兰": {
-    "skills": [
-      {
-        "name": "普通攻击·潜形隐曜弓-破局矢伤害",
-        "index": "6",
-        "damage_key": "normal"
-      },
-      {
-        "name": "萦络纵命索-技能伤害",
-        "index": "11",
-        "damage_key": "normal"
-      },
-      {
-        "name": "渊图玲珑骰-技能伤害",
-        "index": "12",
-        "damage_key": "normal"
-      },
-      {
-        "name": "渊图玲珑骰-玄掷玲珑伤害",
-        "index": "13",
-        "damage_key": "normal"
-      }
-    ],
-    "config": {
-      "team_element_count": 4
-    },
-    "config_weapon": {
-      "AquaSimulacra": {
-        "is_enemy_around": true
-      }
-    }
-  },
-  "雷电将军": {
-    "skills": [
-      {
-        "name": "神变•恶曜开眼-技能伤害",
-        "index": "10",
-        "damage_key": "normal"
-      },
-      {
-        "name": "神变•恶曜开眼协-同攻击伤害",
-        "index": "11",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-梦想一刀基础伤害",
-        "index": "12",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-一段伤害",
-        "index": "13",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-二段伤害",
-        "index": "14",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-三段伤害",
-        "index": "15",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-四段伤害-1",
-        "index": "16",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-四段伤害-2",
-        "index": "17",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-五段伤害",
-        "index": "18",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-重击伤害-1",
-        "index": "19",
-        "damage_key": "normal"
-      },
-      {
-        "name": "奥义•梦想真说-重击伤害-2",
-        "index": "20",
-        "damage_key": "normal"
-      }
-    ],
-    "config_skill": {
-      "under_e": true,
-      "resolve_stack": 60
-    },
-    "config_weapon": {
-      "EngulfingLightning": {
-        "rate": 0
-      }
-    }
-  }
 }
