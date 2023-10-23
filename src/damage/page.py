@@ -1,3 +1,5 @@
+from typing import List
+
 from flet_core import MainAxisAlignment
 
 import flet as ft
@@ -5,7 +7,7 @@ import flet as ft
 from src.data import Page
 from .character import character
 from .data import data
-from .models import CharacterSkill, CharacterDamageSkillDamageKey
+from .models import CharacterSkill, CharacterDamageSkillDamageKey, CharacterConfig
 
 
 def edit_damage_view(page: "Page"):
@@ -44,14 +46,8 @@ def edit_damage_view(page: "Page"):
         success_dialog.open = True
         page.update()
 
-    def choose_character(e: ft.ControlEvent = None):
-        if e is not None:
-            ch_name = e.control.data[0]
-            character.current_name = ch_name
-        else:
-            ch_name = character.current_name
-        page.update()
-        update_top_title(ch_name)
+    def update_skill_component():
+        ch_name = character.current_name
         skill_list.controls.clear()
         skill_list.controls.append(
             ft.Container(
@@ -72,6 +68,68 @@ def edit_damage_view(page: "Page"):
                 on_click=choose_skill,
             )
             skill_list.controls.append(container)
+
+    def update_config_component() -> List:
+        ch_name = character.current_name
+        character_control_list.controls.clear()
+        com = []
+        character_control_list.controls.append(ft.Column(com))
+        com.append(
+            ft.Container(
+                content=ft.Text(
+                    "  角色配置",
+                    size=20,
+                ),
+            ),
+        )
+
+        def on_config_value_change(e: ft.ControlEvent = None):
+            data.set_character_config_value(ch_name, e.control.data, e.data)
+
+        def gen_switch_or_text(config: CharacterConfig):
+            if isinstance(config.default, bool):
+                class_ = ft.Checkbox
+            else:
+                class_ = ft.TextField
+            return class_(
+                label=config.title,
+                value=data.get_character_config_value(ch_name, config),
+                data=config,
+                on_change=on_config_value_change,
+            )
+
+        def reset_all_config_value(_):
+            for config in configs:
+                config.value = config.data.default
+                data.set_character_config_value(ch_name, config.data, config.data.default)
+            page.update()
+
+        configs = []
+        for i in character.config_map[ch_name]:
+            content = gen_switch_or_text(i)
+            configs.append(content)
+            com.append(
+                ft.Container(
+                    content=content,
+                ),
+            )
+        if len(configs) != 0:
+            com.append(
+                ft.Container(
+                    content=ft.ElevatedButton("恢复到默认值", on_click=reset_all_config_value),
+                )
+            )
+
+    def choose_character(e: ft.ControlEvent = None):
+        if e is not None:
+            ch_name = e.control.data[0]
+            character.current_name = ch_name
+        else:
+            ch_name = character.current_name
+        page.update()
+        update_top_title(ch_name)
+        update_skill_component()
+        update_config_component()
         page.update()
 
     def choose_skill(e: ft.ControlEvent = None):

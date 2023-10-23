@@ -1,8 +1,8 @@
 import json
-from typing import Dict
+from typing import Dict, Any
 
 from .character import character
-from .models import CharacterDamage, CharacterSkill
+from .models import CharacterDamage, CharacterSkill, CharacterConfig
 
 
 class Data:
@@ -88,6 +88,25 @@ class Data:
             if in_data:
                 self.file_data[character_name].skills.remove(in_data)
         self.file_data[character_name].skills.sort(key=lambda x: x.index)
+        self.last_close(character_name)
+
+    def get_character_config_value(self, character_name: str, config_: CharacterConfig) -> Any:
+        if not self.file_data.get(character_name):
+            return None
+        if not self.file_data[character_name].config:
+            return None
+        return self.file_data[character_name].config.get(config_.name, None)
+
+    def set_character_config_value(self, character_name: str, config: CharacterConfig, value: Any):
+        self.first_init(character_name)
+        if not self.file_data[character_name].config:
+            self.file_data[character_name].config = {}
+        if isinstance(config.default, bool):
+            new_value = value == "true"
+        else:
+            value_class = type(config.default)
+            new_value = value_class(value)
+        self.file_data[character_name].config[config.name] = new_value
         self.last_close(character_name)
 
 
