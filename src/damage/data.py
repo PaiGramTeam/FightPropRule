@@ -90,14 +90,18 @@ class Data:
         self.file_data[character_name].skills.sort(key=lambda x: x.index)
         self.last_close(character_name)
 
-    def get_character_config_value(self, character_name: str, config_: CharacterConfig) -> Any:
+    def get_character_config_value(
+        self, character_name: str, config_: CharacterConfig
+    ) -> Any:
         if not self.file_data.get(character_name):
             return None
         if not self.file_data[character_name].config:
             return None
         return self.file_data[character_name].config.get(config_.name, None)
 
-    def set_character_config_value(self, character_name: str, config: CharacterConfig, value: Any):
+    def set_character_config_value(
+        self, character_name: str, config: CharacterConfig, value: Any
+    ):
         self.first_init(character_name)
         if not self.file_data[character_name].config:
             self.file_data[character_name].config = {}
@@ -107,6 +111,29 @@ class Data:
             value_class = type(config.default)
             new_value = value_class(value)
         self.file_data[character_name].config[config.name] = new_value
+        self.last_close(character_name)
+
+    def get_character_skill_config_value(
+        self, character_name: str, config_: CharacterConfig
+    ) -> Any:
+        if not self.file_data.get(character_name):
+            return None
+        if not self.file_data[character_name].config_skill:
+            return None
+        return self.file_data[character_name].config_skill.get(config_.name, None)
+
+    def set_character_skill_config_value(
+        self, character_name: str, config: CharacterConfig, value: Any
+    ):
+        self.first_init(character_name)
+        if not self.file_data[character_name].config_skill:
+            self.file_data[character_name].config_skill = {}
+        if isinstance(config.default, bool):
+            new_value = value == "true"
+        else:
+            value_class = type(config.default)
+            new_value = value_class(value)
+        self.file_data[character_name].config_skill[config.name] = new_value
         self.last_close(character_name)
 
 

@@ -69,22 +69,27 @@ def edit_damage_view(page: "Page"):
             )
             skill_list.controls.append(container)
 
-    def update_config_component() -> List:
+    def update_config_component(
+        com: List,
+        name: str,
+        config_map,
+        set_character_config_value,
+        get_character_config_value,
+    ):
         ch_name = character.current_name
-        character_control_list.controls.clear()
-        com = []
-        character_control_list.controls.append(ft.Column(com))
+        if not character.config_map[ch_name]:
+            return
         com.append(
             ft.Container(
                 content=ft.Text(
-                    "  角色配置",
+                    name,
                     size=20,
                 ),
             ),
         )
 
         def on_config_value_change(e: ft.ControlEvent = None):
-            data.set_character_config_value(ch_name, e.control.data, e.data)
+            set_character_config_value(ch_name, e.control.data, e.data)
 
         def gen_switch_or_text(config: CharacterConfig):
             if isinstance(config.default, bool):
@@ -93,7 +98,7 @@ def edit_damage_view(page: "Page"):
                 class_ = ft.TextField
             return class_(
                 label=config.title,
-                value=data.get_character_config_value(ch_name, config),
+                value=get_character_config_value(ch_name, config),
                 data=config,
                 on_change=on_config_value_change,
             )
@@ -101,11 +106,11 @@ def edit_damage_view(page: "Page"):
         def reset_all_config_value(_):
             for config in configs:
                 config.value = config.data.default
-                data.set_character_config_value(ch_name, config.data, config.data.default)
+                set_character_config_value(ch_name, config.data, config.data.default)
             page.update()
 
         configs = []
-        for i in character.config_map[ch_name]:
+        for i in config_map[ch_name]:
             content = gen_switch_or_text(i)
             configs.append(content)
             com.append(
@@ -116,9 +121,12 @@ def edit_damage_view(page: "Page"):
         if len(configs) != 0:
             com.append(
                 ft.Container(
-                    content=ft.ElevatedButton("恢复到默认值", on_click=reset_all_config_value),
+                    content=ft.ElevatedButton(
+                        "恢复到默认值", on_click=reset_all_config_value
+                    ),
                 )
             )
+        return com
 
     def choose_character(e: ft.ControlEvent = None):
         if e is not None:
@@ -129,7 +137,23 @@ def edit_damage_view(page: "Page"):
         page.update()
         update_top_title(ch_name)
         update_skill_component()
-        update_config_component()
+        character_control_list.controls.clear()
+        com = []
+        character_control_list.controls.append(ft.Column(com))
+        update_config_component(
+            com,
+            "  角色配置",
+            character.config_map,
+            data.set_character_config_value,
+            data.get_character_config_value,
+        )
+        update_config_component(
+            com,
+            "  技能配置",
+            character.config_skill_map,
+            data.set_character_skill_config_value,
+            data.get_character_skill_config_value,
+        )
         page.update()
 
     def choose_skill(e: ft.ControlEvent = None):
