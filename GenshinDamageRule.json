@@ -2,17 +2,17 @@
   "胡桃": {
     "skills": [
       {
-        "name": "重击蒸发伤害",
+        "name": "普通攻击·往生秘传枪法-重击蒸发伤害",
         "index": "7",
         "damage_key": "vaporize"
       },
       {
-        "name": "大招蒸发伤害",
+        "name": "安神秘法-蒸发伤害",
         "index": "12",
         "damage_key": "vaporize"
       },
       {
-        "name": "低血量大招蒸发伤害",
+        "name": "安神秘法-低血量蒸发伤害",
         "index": "13",
         "damage_key": "vaporize"
       }
@@ -37,22 +37,22 @@
   "夜兰": {
     "skills": [
       {
-        "name": "破局矢伤害",
+        "name": "普通攻击·潜形隐曜弓-破局矢伤害",
         "index": "6",
         "damage_key": "normal"
       },
       {
-        "name": "萦络纵命索技能伤害",
+        "name": "萦络纵命索-技能伤害",
         "index": "11",
         "damage_key": "normal"
       },
       {
-        "name": "渊图玲珑骰技能伤害",
+        "name": "渊图玲珑骰-技能伤害",
         "index": "12",
         "damage_key": "normal"
       },
       {
-        "name": "渊图玲珑骰玄掷玲珑伤害",
+        "name": "渊图玲珑骰-玄掷玲珑伤害",
         "index": "13",
         "damage_key": "normal"
       }
@@ -69,57 +69,57 @@
   "雷电将军": {
     "skills": [
       {
-        "name": "神变•恶曜开眼技能伤害",
+        "name": "神变•恶曜开眼-技能伤害",
         "index": "10",
         "damage_key": "normal"
       },
       {
-        "name": "神变•恶曜开眼协同攻击伤害",
+        "name": "神变•恶曜开眼协-同攻击伤害",
         "index": "11",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说梦想一刀基础伤害",
+        "name": "奥义•梦想真说-梦想一刀基础伤害",
         "index": "13",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说一段伤害",
+        "name": "奥义•梦想真说-一段伤害",
         "index": "13",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说二段伤害",
+        "name": "奥义•梦想真说-二段伤害",
         "index": "14",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说三段伤害",
+        "name": "奥义•梦想真说-三段伤害",
         "index": "15",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说四段伤害-1",
+        "name": "奥义•梦想真说-四段伤害-1",
         "index": "16",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说四段伤害-2",
+        "name": "奥义•梦想真说-四段伤害-2",
         "index": "17",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说五段伤害",
+        "name": "奥义•梦想真说-五段伤害",
         "index": "18",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说重击伤害-1",
+        "name": "奥义•梦想真说-重击伤害-1",
         "index": "19",
         "damage_key": "normal"
       },
       {
-        "name": "奥义•梦想真说重击伤害-2",
+        "name": "奥义•梦想真说-重击伤害-2",
         "index": "20",
         "damage_key": "normal"
       }
