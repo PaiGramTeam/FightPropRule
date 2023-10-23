@@ -130,7 +130,7 @@
     },
     "config_weapon": {
       "EngulfingLightning": {
-        "rate": 1
+        "rate": 0
       }
     }
   }
