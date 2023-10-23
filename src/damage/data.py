@@ -2,7 +2,7 @@ import json
 from typing import Dict, Any
 
 from .character import character
-from .models import CharacterDamage, CharacterSkill, CharacterConfig
+from .models import CharacterDamage, CharacterSkill, CharacterConfig, WeaponConfig
 
 
 class Data:
@@ -50,6 +50,14 @@ class Data:
         if character_name not in self.file_data:
             return
         data_ = self.file_data[character_name]
+
+        def last_close_weapon_or_artifact():
+            if data_.config_weapon:
+                for k, v in data_.config_weapon.copy().items():
+                    if not v:
+                        del data_.config_weapon[k]
+
+        last_close_weapon_or_artifact()
         if len(data_.skills) != 0:
             return
         if data_.config is not None and data_.config:
@@ -135,6 +143,45 @@ class Data:
             new_value = value_class(value)
         self.file_data[character_name].config_skill[config.name] = new_value
         self.last_close(character_name)
+
+    def get_character_weapon_config_value(
+        self, character_name: str, config_: WeaponConfig
+    ) -> Any:
+        if not self.file_data.get(character_name):
+            return None
+        if not self.file_data[character_name].config_weapon:
+            return None
+        data_ = self.file_data[character_name].config_weapon.get(config_.parent, None)
+        if not data_:
+            return None
+        return data_.get(config_.name, None)
+
+    def set_character_weapon_config_value(
+        self, character_name: str, config: WeaponConfig, value: Any
+    ):
+        self.first_init(character_name)
+        if not self.file_data[character_name].config_weapon:
+            self.file_data[character_name].config_weapon = {}
+        data_ = self.file_data[character_name].config_weapon.get(config.parent, {})
+        if value == "":
+            if config.name in data_:
+                del data_[config.name]
+        else:
+            if isinstance(config.default, bool):
+                new_value = value == "true"
+            else:
+                value_class = type(config.default)
+                new_value = value_class(value)
+            data_[config.name] = new_value
+        self.file_data[character_name].config_weapon[config.parent] = data_
+        self.last_close(character_name)
+
+    def get_weapon_config_enable(self, character_name: str, weapon_key: str) -> bool:
+        if not self.file_data.get(character_name):
+            return False
+        if not self.file_data[character_name].config_weapon:
+            return False
+        return weapon_key in self.file_data[character_name].config_weapon
 
 
 data = Data()

@@ -7,12 +7,20 @@ import flet as ft
 from src.data import Page
 from .character import character
 from .data import data
-from .models import CharacterSkill, CharacterDamageSkillDamageKey, CharacterConfig
+from .models import (
+    CharacterSkill,
+    CharacterDamageSkillDamageKey,
+    CharacterConfig,
+    Weapon as WeaponModel,
+)
+from .weapon import weapon
 
 
 def edit_damage_view(page: "Page"):
     name_list = ft.ListView(width=230)
     skill_list = ft.ListView(expand=True)
+    weapon_list = ft.ListView(expand=True)
+    artifact_list = ft.ListView(expand=True)
     character_control_list = ft.ListView(expand=True)
     top_title = ft.Ref[ft.Text]()
 
@@ -69,6 +77,45 @@ def edit_damage_view(page: "Page"):
             )
             skill_list.controls.append(container)
 
+    def update_weapon_component():
+        ch_name = character.current_name
+        character_ = character.characters_map[ch_name]
+        weapon_list.controls.clear()
+        weapon_list.controls.append(
+            ft.Container(
+                content=ft.Text(
+                    "  武器配置",
+                    size=20,
+                ),
+            )
+        )
+        for i in weapon.weapon_map.get(character_.get("weapon", ""), []):
+            i: "WeaponModel"
+            container = ft.Container(
+                content=ft.Checkbox(
+                    label=i.cn_name,
+                    value=data.get_weapon_config_enable(ch_name, i.name),
+                    disabled=True,
+                    data=i,
+                ),
+                on_click=choose_weapon,
+            )
+            weapon_list.controls.append(container)
+
+    def gen_switch_or_text(
+        ch_name, config: CharacterConfig, get_config_value, on_change
+    ):
+        if isinstance(config.default, bool):
+            class_ = ft.Checkbox
+        else:
+            class_ = ft.TextField
+        return class_(
+            label=config.title,
+            value=get_config_value(ch_name, config),
+            data=config,
+            on_change=on_change,
+        )
+
     def update_config_component(
         com: List,
         name: str,
@@ -91,18 +138,6 @@ def edit_damage_view(page: "Page"):
         def on_config_value_change(e: ft.ControlEvent = None):
             set_character_config_value(ch_name, e.control.data, e.data)
 
-        def gen_switch_or_text(config: CharacterConfig):
-            if isinstance(config.default, bool):
-                class_ = ft.Checkbox
-            else:
-                class_ = ft.TextField
-            return class_(
-                label=config.title,
-                value=get_character_config_value(ch_name, config),
-                data=config,
-                on_change=on_config_value_change,
-            )
-
         def reset_all_config_value(_):
             for config in configs:
                 config.value = config.data.default
@@ -111,7 +146,9 @@ def edit_damage_view(page: "Page"):
 
         configs = []
         for i in config_map[ch_name]:
-            content = gen_switch_or_text(i)
+            content = gen_switch_or_text(
+                ch_name, i, get_character_config_value, on_config_value_change
+            )
             configs.append(content)
             com.append(
                 ft.Container(
@@ -137,6 +174,7 @@ def edit_damage_view(page: "Page"):
         page.update()
         update_top_title(ch_name)
         update_skill_component()
+        update_weapon_component()
         character_control_list.controls.clear()
         com = []
         character_control_list.controls.append(ft.Column(com))
@@ -156,13 +194,13 @@ def edit_damage_view(page: "Page"):
         )
         page.update()
 
+    def bs_dismissed(_: ft.ControlEvent = None):
+        choose_character()
+
     def choose_skill(e: ft.ControlEvent = None):
         checkbox: ft.Checkbox = e.control.content
         skill: CharacterSkill = checkbox.data
         page.overlay.clear()
-
-        def bs_dismissed(_: ft.ControlEvent = None):
-            choose_character()
 
         def close_bs(_: ft.ControlEvent = None):
             bs.open = False
@@ -206,6 +244,68 @@ def edit_damage_view(page: "Page"):
                         ),
                         ft.ElevatedButton("关闭", on_click=close_bs),
                     ],
+                    tight=True,
+                ),
+                padding=10,
+            ),
+            open=True,
+            on_dismiss=bs_dismissed,
+        )
+        page.overlay.append(bs)
+        page.update()
+        bs.update()
+
+    def choose_weapon(e):
+        choose_weapon_or_artifact(
+            e,
+            data.get_character_weapon_config_value,
+            data.set_character_weapon_config_value,
+        )
+
+    def choose_weapon_or_artifact(
+        e: ft.ControlEvent,
+        get_config_value,
+        set_config_value,
+    ):
+        ch_name = character.current_name
+        checkbox: ft.Checkbox = e.control.content
+        model: "WeaponModel" = checkbox.data
+        page.overlay.clear()
+
+        def close_bs(_: ft.ControlEvent = None):
+            bs.open = False
+            bs.update()
+
+        def on_config_value_change(e_: ft.ControlEvent = None):
+            set_config_value(ch_name, e_.control.data, e_.data)
+
+        def reset_all_config_value(_):
+            for config in configs:
+                config.value = config.data.default
+                set_config_value(ch_name, config.data, config.data.default)
+            page.update()
+
+        controls = [
+            ft.Text(model.cn_name),
+        ]
+        configs = []
+        for i in model.config:
+            content = gen_switch_or_text(
+                ch_name, i, get_config_value, on_config_value_change
+            )
+            configs.append(content)
+            controls.append(content)
+        controls.append(
+            ft.Container(
+                content=ft.ElevatedButton("恢复到默认值", on_click=reset_all_config_value),
+            )
+        )
+        controls.append(ft.ElevatedButton("关闭", on_click=close_bs))
+
+        bs = ft.BottomSheet(
+            ft.Container(
+                ft.Column(
+                    controls,
                     tight=True,
                 ),
                 padding=10,
@@ -281,6 +381,10 @@ def edit_damage_view(page: "Page"):
                         name_list,
                         ft.VerticalDivider(width=1),
                         skill_list,
+                        ft.VerticalDivider(width=1),
+                        weapon_list,
+                        ft.VerticalDivider(width=1),
+                        artifact_list,
                         ft.VerticalDivider(width=1),
                         character_control_list,
                     ],

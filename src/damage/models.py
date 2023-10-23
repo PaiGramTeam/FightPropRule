@@ -66,3 +66,23 @@ class CharacterSkill(BaseModel):
 
     class Config:
         frozen = False
+
+
+class WeaponConfig(CharacterConfig):
+    max: float = 0
+    min: float = 0
+    parent: str = ""
+
+    class Config:
+        frozen = False
+
+
+class Weapon(BaseModel):
+    name: str
+    cn_name: str
+    star: int
+    t: str
+    config: List[WeaponConfig]
+
+    class Config:
+        frozen = False
