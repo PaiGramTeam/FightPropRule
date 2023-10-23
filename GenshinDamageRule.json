@@ -65,5 +65,73 @@
         "is_enemy_around": true
       }
     }
+  },
+  "雷电将军": {
+    "skills": [
+      {
+        "name": "神变•恶曜开眼技能伤害",
+        "index": "10",
+        "damage_key": "normal"
+      },
+      {
+        "name": "神变•恶曜开眼协同攻击伤害",
+        "index": "11",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说梦想一刀基础伤害",
+        "index": "13",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说一段伤害",
+        "index": "13",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说二段伤害",
+        "index": "14",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说三段伤害",
+        "index": "15",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说四段伤害-1",
+        "index": "16",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说四段伤害-2",
+        "index": "17",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说五段伤害",
+        "index": "18",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说重击伤害-1",
+        "index": "19",
+        "damage_key": "normal"
+      },
+      {
+        "name": "奥义•梦想真说重击伤害-2",
+        "index": "20",
+        "damage_key": "normal"
+      }
+    ],
+    "config_skill": {
+      "under_e": true,
+      "resolve_stack": 60
+    },
+    "config_weapon": {
+      "EngulfingLightning": {
+        "rate": 1
+      }
+    }
   }
 }
