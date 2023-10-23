@@ -5,6 +5,7 @@ from flet_core import MainAxisAlignment
 import flet as ft
 
 from src.data import Page
+from .artifact import artifact
 from .character import character
 from .data import data
 from .models import (
@@ -102,6 +103,29 @@ def edit_damage_view(page: "Page"):
             )
             weapon_list.controls.append(container)
 
+    def update_artifact_component():
+        ch_name = character.current_name
+        artifact_list.controls.clear()
+        artifact_list.controls.append(
+            ft.Container(
+                content=ft.Text(
+                    "  圣遗物配置",
+                    size=20,
+                ),
+            )
+        )
+        for i in artifact.artifacts:
+            container = ft.Container(
+                content=ft.Checkbox(
+                    label=i.cn_name,
+                    value=data.get_artifact_config_enable(ch_name, i.config_name),
+                    disabled=True,
+                    data=i,
+                ),
+                on_click=choose_artifact,
+            )
+            artifact_list.controls.append(container)
+
     def gen_switch_or_text(
         ch_name, config: CharacterConfig, get_config_value, on_change
     ):
@@ -175,6 +199,7 @@ def edit_damage_view(page: "Page"):
         update_top_title(ch_name)
         update_skill_component()
         update_weapon_component()
+        update_artifact_component()
         character_control_list.controls.clear()
         com = []
         character_control_list.controls.append(ft.Column(com))
@@ -260,6 +285,13 @@ def edit_damage_view(page: "Page"):
             e,
             data.get_character_weapon_config_value,
             data.set_character_weapon_config_value,
+        )
+
+    def choose_artifact(e):
+        choose_weapon_or_artifact(
+            e,
+            data.get_character_artifact_config_value,
+            data.set_character_artifact_config_value,
         )
 
     def choose_weapon_or_artifact(

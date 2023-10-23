@@ -86,3 +86,28 @@ class Weapon(BaseModel):
 
     class Config:
         frozen = False
+
+
+class Artifact(BaseModel):
+    name: str
+    cn_name: str
+    min_star: int
+    max_star: int
+    config: List[WeaponConfig]
+
+    @property
+    def config_name(self) -> str:
+        return self.get_config_name(self.name)
+
+    @staticmethod
+    def get_config_name(name: str) -> str:
+        start = "config_"
+        # 将大写转换为下划线加小写
+        # 例如: MaxHp -> max_hp
+        convert_name = "".join(
+            [f"_{i.lower()}" if i.isupper() else i for i in name]
+        ).lstrip("_")
+        return f"{start}{convert_name}"
+
+    class Config:
+        frozen = False

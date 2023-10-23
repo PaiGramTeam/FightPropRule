@@ -56,6 +56,10 @@ class Data:
                 for k, v in data_.config_weapon.copy().items():
                     if not v:
                         del data_.config_weapon[k]
+            if data_.artifact_config:
+                for k, v in data_.artifact_config.copy().items():
+                    if not v:
+                        del data_.artifact_config[k]
 
         last_close_weapon_or_artifact()
         if len(data_.skills) != 0:
@@ -182,6 +186,47 @@ class Data:
         if not self.file_data[character_name].config_weapon:
             return False
         return weapon_key in self.file_data[character_name].config_weapon
+
+    def get_character_artifact_config_value(
+        self, character_name: str, config_: WeaponConfig
+    ) -> Any:
+        if not self.file_data.get(character_name):
+            return None
+        if not self.file_data[character_name].artifact_config:
+            return None
+        data_ = self.file_data[character_name].artifact_config.get(config_.parent, None)
+        if not data_:
+            return None
+        return data_.get(config_.name, None)
+
+    def set_character_artifact_config_value(
+        self, character_name: str, config: WeaponConfig, value: Any
+    ):
+        self.first_init(character_name)
+        if not self.file_data[character_name].artifact_config:
+            self.file_data[character_name].artifact_config = {}
+        data_ = self.file_data[character_name].artifact_config.get(config.parent, {})
+        if value == "":
+            if config.name in data_:
+                del data_[config.name]
+        else:
+            if isinstance(config.default, bool):
+                new_value = value == "true"
+            else:
+                value_class = type(config.default)
+                new_value = value_class(value)
+            data_[config.name] = new_value
+        self.file_data[character_name].artifact_config[config.parent] = data_
+        self.last_close(character_name)
+
+    def get_artifact_config_enable(
+        self, character_name: str, artifact_key: str
+    ) -> bool:
+        if not self.file_data.get(character_name):
+            return False
+        if not self.file_data[character_name].artifact_config:
+            return False
+        return artifact_key in self.file_data[character_name].artifact_config
 
 
 data = Data()

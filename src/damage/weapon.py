@@ -7,7 +7,7 @@ from .models import Weapon as WeaponModel, WeaponConfig
 
 class Weapon:
     def __init__(self):
-        weapon_map: Dict[str, Weapon] = {}
+        weapon_map: Dict[str, WeaponModel] = {}
         for value in assets.weapon.values():
             if not value["configs"]:
                 continue
