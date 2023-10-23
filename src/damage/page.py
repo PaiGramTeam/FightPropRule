@@ -58,11 +58,23 @@ def edit_damage_view(page: "Page"):
     def update_skill_component():
         ch_name = character.current_name
         skill_list.controls.clear()
+
+        def search_skills(e: ft.ControlEvent = None):
+            temp = skill_list.controls[0]
+            skill_list.controls.clear()
+            skill_list.controls.append(temp)
+            for con in skill_list_data:
+                con: "ft.Container"
+                cb: "ft.Checkbox" = con.content  # noqa
+                if e is None or e.data in cb.label:
+                    skill_list.controls.append(con)
+            page.update()
+
         skill_list.controls.append(
             ft.Container(
-                content=ft.Text(
-                    "  技能配置",
-                    size=20,
+                content=ft.TextField(
+                    label="技能配置",
+                    on_change=search_skills,
                 ),
             )
         )
@@ -77,16 +89,29 @@ def edit_damage_view(page: "Page"):
                 on_click=choose_skill,
             )
             skill_list.controls.append(container)
+        skill_list_data = skill_list.controls[1:]
 
     def update_weapon_component():
         ch_name = character.current_name
         character_ = character.characters_map[ch_name]
         weapon_list.controls.clear()
+
+        def search_weapons(e: ft.ControlEvent = None):
+            temp = weapon_list.controls[0]
+            weapon_list.controls.clear()
+            weapon_list.controls.append(temp)
+            for con in weapon_list_data:
+                con: "ft.Container"
+                cb: "ft.Checkbox" = con.content  # noqa
+                if e is None or e.data in cb.label:
+                    weapon_list.controls.append(con)
+            page.update()
+
         weapon_list.controls.append(
             ft.Container(
-                content=ft.Text(
-                    "  武器配置",
-                    size=20,
+                content=ft.TextField(
+                    label="武器配置",
+                    on_change=search_weapons,
                 ),
             )
         )
@@ -102,15 +127,28 @@ def edit_damage_view(page: "Page"):
                 on_click=choose_weapon,
             )
             weapon_list.controls.append(container)
+        weapon_list_data = weapon_list.controls[1:]
 
     def update_artifact_component():
         ch_name = character.current_name
         artifact_list.controls.clear()
+
+        def search_artifacts(e: ft.ControlEvent = None):
+            temp = artifact_list.controls[0]
+            artifact_list.controls.clear()
+            artifact_list.controls.append(temp)
+            for con in artifact_list_data:
+                con: "ft.Container"
+                cb: "ft.Checkbox" = con.content  # noqa
+                if e is None or e.data in cb.label:
+                    artifact_list.controls.append(con)
+            page.update()
+
         artifact_list.controls.append(
             ft.Container(
-                content=ft.Text(
-                    "  圣遗物配置",
-                    size=20,
+                content=ft.TextField(
+                    label="圣遗物配置",
+                    on_change=search_artifacts,
                 ),
             )
         )
@@ -125,6 +163,7 @@ def edit_damage_view(page: "Page"):
                 on_click=choose_artifact,
             )
             artifact_list.controls.append(container)
+        artifact_list_data = artifact_list.controls[1:]
 
     def gen_switch_or_text(
         ch_name, config: CharacterConfig, get_config_value, on_change
@@ -350,6 +389,23 @@ def edit_damage_view(page: "Page"):
         bs.update()
 
     def load_names():
+        def search_names(e: ft.ControlEvent = None):
+            temp = name_list.controls[0]
+            name_list.controls.clear()
+            name_list.controls.append(temp)
+            for name_ in name_list_data:
+                if e is None or e.data in name_.text:
+                    name_list.controls.append(name_)
+            page.update()
+
+        name_list.controls.append(
+            ft.Container(
+                content=ft.TextField(
+                    label="搜索",
+                    on_change=search_names,
+                ),
+            )
+        )
         for index, name in enumerate(character.characters_name):
             name_list.controls.append(
                 ft.TextButton(
@@ -366,6 +422,7 @@ def edit_damage_view(page: "Page"):
                     disabled=False,
                 ),
             )
+        name_list_data = name_list.controls[1:]
 
     load_names()
     page.views.append(

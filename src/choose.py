@@ -36,7 +36,7 @@ def choose_view(page: Page):
                     [
                         ft.Container(
                             content=ft.Text(
-                                "FightPropRuleEditor",
+                                "GramBotMetadataEditor",
                                 size=50,
                             ),
                         ),

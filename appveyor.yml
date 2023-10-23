@@ -19,7 +19,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name FightPropRuleEditor --product-name FightPropRuleEditor
+- flet pack main.py --name GramBotMetadataEditor --product-name GramBotMetadataEditor
 
 test: off
 
@@ -40,10 +40,10 @@ for:
     - image: Visual Studio 2019
 
   after_build:
-  - 7z a FightPropRuleEditor-windows.zip %CD%\dist\*.exe
+  - 7z a GramBotMetadataEditor-windows.zip %CD%\dist\*.exe
 
   artifacts:
-  - path: FightPropRuleEditor-windows.zip
+  - path: GramBotMetadataEditor-windows.zip
 
 #
 #   macOS package
@@ -54,10 +54,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf FightPropRuleEditor-macos.tar.gz -C dist FightPropRuleEditor.app
+  - tar -czvf GramBotMetadataEditor-macos.tar.gz -C dist GramBotMetadataEditor.app
 
   artifacts:
-  - path: FightPropRuleEditor-macos.tar.gz
+  - path: GramBotMetadataEditor-macos.tar.gz
 
 #
 #   Linux package
@@ -68,7 +68,7 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf FightPropRuleEditor-linux.tar.gz -C dist FightPropRuleEditor
+  - tar -czvf GramBotMetadataEditor-linux.tar.gz -C dist GramBotMetadataEditor
 
   artifacts:
-  - path: FightPropRuleEditor-linux.tar.gz
+  - path: GramBotMetadataEditor-linux.tar.gz
