@@ -25,11 +25,45 @@
     },
     "config_weapon": {
       "StaffOfHoma": {
-          "be50_rate": 1
-        }
+        "be50_rate": 1
+      }
     },
     "artifact_config": {
-      "config_crimson_witch_of_flames": {"level": 1}
+      "config_crimson_witch_of_flames": {
+        "level": 1
+      }
+    }
+  },
+  "夜兰": {
+    "skills": [
+      {
+        "name": "破局矢伤害",
+        "index": "6",
+        "damage_key": "normal"
+      },
+      {
+        "name": "萦络纵命索技能伤害",
+        "index": "10",
+        "damage_key": "normal"
+      },
+      {
+        "name": "渊图玲珑骰技能伤害",
+        "index": "11",
+        "damage_key": "normal"
+      },
+      {
+        "name": "渊图玲珑骰玄掷玲珑伤害",
+        "index": "12",
+        "damage_key": "normal"
+      }
+    ],
+    "config": {
+      "team_element_count": 4
+    },
+    "config_weapon": {
+      "AquaSimulacra": {
+        "is_enemy_around": true
+      }
     }
   }
 }
