@@ -54,16 +54,63 @@ class CharacterDamageSkillDamageKey(str, Enum):
     """融化伤害结果"""
     vaporize = "vaporize"
     """蒸发伤害结果"""
+    spread = "spread"
+    """蔓激化伤害结果"""
+    aggravate = "aggravate"
+    """超激化伤害结果"""
 
     @property
     def data_map(self) -> Dict[str, str]:
-        return {"普通伤害结果": "normal", "融化伤害结果": "melt", "蒸发伤害结果": "vaporize"}
+        return {
+            "普通伤害结果": "normal",
+            "融化伤害结果": "melt",
+            "蒸发伤害结果": "vaporize",
+            "蔓激化伤害结果": "spread",
+            "超激化伤害结果": "aggravate",
+        }
+
+
+class CharacterDamageSkillTransformativeDamageKey(str, Enum):
+    swirl_cryo = "swirl_cryo"
+    swirl_hydro = "swirl_hydro"
+    swirl_pyro = "swirl_pyro"
+    swirl_electro = "swirl_electro"
+    overload = "overload"
+    electro_charged = "electro_charged"
+    shatter = "shatter"
+    super_conduct = "super_conduct"
+    bloom = "bloom"
+    hyper_bloom = "hyper_bloom"
+    burgeon = "burgeon"
+    burning = "burning"
+    crystallize = "crystallize"
+
+    @property
+    def data_map(self) -> Dict[str, str]:
+        return {
+            "扩散（冰）伤害值": "swirl_cryo",
+            "扩散（水）伤害值": "swirl_hydro",
+            "扩散（火）伤害值": "swirl_pyro",
+            "扩散（雷）伤害值": "swirl_electro",
+            "超载伤害值": "overload",
+            "感电伤害值": "electro_charged",
+            "碎冰伤害值": "shatter",
+            "超导伤害值": "super_conduct",
+            "绽放伤害值": "bloom",
+            "烈绽放伤害值": "hyper_bloom",
+            "超绽放伤害值": "burgeon",
+            "燃烧伤害值": "burning",
+            "结晶盾伤害吸收量": "crystallize",
+        }
 
 
 class CharacterDamageSkill(BaseModel):
     name: str
     index: int
-    damage_key: CharacterDamageSkillDamageKey
+    damage_key: Optional[CharacterDamageSkillDamageKey] = None
+    transformative_damage_key: Optional[
+        CharacterDamageSkillTransformativeDamageKey
+    ] = None
 
     class Config:
         frozen = False
@@ -95,7 +142,10 @@ class CharacterSkill(BaseModel):
     index: int
     skill_name: str
     custom_name: str = ""
-    damage_key: CharacterDamageSkillDamageKey = CharacterDamageSkillDamageKey.normal
+    damage_key: Optional[CharacterDamageSkillDamageKey] = None
+    transformative_damage_key: Optional[
+        CharacterDamageSkillTransformativeDamageKey
+    ] = None
 
     @property
     def show_name(self) -> str:
@@ -106,6 +156,7 @@ class CharacterSkill(BaseModel):
             name=self.custom_name or self.show_name,
             index=self.index,
             damage_key=self.damage_key,
+            transformative_damage_key=self.transformative_damage_key,
         )
 
     class Config:

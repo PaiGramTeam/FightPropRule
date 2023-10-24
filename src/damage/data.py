@@ -23,13 +23,20 @@ class Data:
         for c_name, v in self.file_data.items():
             custom_name_map = {}
             damage_key_map = {}
+            transformative_damage_key_map = {}
             for skill in v.skills:
                 custom_name_map[skill.index] = skill.name
                 damage_key_map[skill.index] = skill.damage_key
+                transformative_damage_key_map[
+                    skill.index
+                ] = skill.transformative_damage_key
             for skill in character.skills_map[c_name]:
                 if skill.index in custom_name_map:
                     skill.custom_name = custom_name_map[skill.index]
                     skill.damage_key = damage_key_map[skill.index]
+                    skill.transformative_damage_key = transformative_damage_key_map[
+                        skill.index
+                    ]
 
     def dump(self) -> Dict[str, Dict]:
         new_data = {}
@@ -96,6 +103,7 @@ class Data:
             else:
                 in_data.name = skill.custom_name or skill.show_name
                 in_data.damage_key = skill.damage_key
+                in_data.transformative_damage_key = skill.transformative_damage_key
         else:
             if in_data:
                 self.file_data[character_name].skills.remove(in_data)

@@ -11,6 +11,7 @@ from .data import data
 from .models import (
     CharacterSkill,
     CharacterDamageSkillDamageKey,
+    CharacterDamageSkillTransformativeDamageKey,
     CharacterConfig,
     Weapon as WeaponModel,
     Element4OP,
@@ -291,6 +292,54 @@ def edit_damage_view(page: "Page"):
             skill.damage_key = CharacterDamageSkillDamageKey(e_.data)
             data.set_skill_value(character.current_name, skill, True)
 
+        def skill_transformative_key_change(e_: ft.ControlEvent = None):
+            skill.transformative_damage_key = (
+                CharacterDamageSkillTransformativeDamageKey(e_.data)
+            )
+            data.set_skill_value(character.current_name, skill, True)
+
+        def skill_key_change_to_transformative(e_: ft.ControlEvent = None):
+            value = e_.data == "true"
+            if value:
+                skill.transformative_damage_key = (
+                    CharacterDamageSkillTransformativeDamageKey.swirl_cryo
+                )
+                skill.damage_key = None
+                normal_skill_ft.visible = False
+                transformative_skill_ft.visible = True
+            else:
+                skill.transformative_damage_key = None
+                skill.damage_key = CharacterDamageSkillDamageKey.normal
+                normal_skill_ft.visible = True
+                transformative_skill_ft.visible = False
+            data.set_skill_value(character.current_name, skill, True)
+            page.update()
+
+        normal_skill_ft = ft.Dropdown(
+            label="输出数据",
+            options=[
+                ft.dropdown.Option(key=v, text=k)
+                for k, v in CharacterDamageSkillDamageKey.normal.data_map.items()
+            ],
+            value=skill.damage_key.value
+            if skill.damage_key
+            else CharacterDamageSkillDamageKey.normal.value,
+            on_change=skill_key_change,
+            visible=not bool(skill.transformative_damage_key),
+        )
+        transformative_skill_ft = ft.Dropdown(
+            label="输出数据",
+            options=[
+                ft.dropdown.Option(key=v, text=k)
+                for k, v in CharacterDamageSkillTransformativeDamageKey.swirl_cryo.data_map.items()
+            ],
+            value=skill.transformative_damage_key.value
+            if skill.transformative_damage_key
+            else CharacterDamageSkillTransformativeDamageKey.swirl_cryo.value,
+            on_change=skill_transformative_key_change,
+            visible=bool(skill.transformative_damage_key),
+        )
+
         bs = ft.BottomSheet(
             ft.Container(
                 ft.Column(
@@ -306,15 +355,13 @@ def edit_damage_view(page: "Page"):
                             value=skill.custom_name or skill.show_name,
                             on_change=skill_custom_name_change,
                         ),
-                        ft.Dropdown(
-                            label="输出数据",
-                            options=[
-                                ft.dropdown.Option(key=v, text=k)
-                                for k, v in CharacterDamageSkillDamageKey.normal.data_map.items()
-                            ],
-                            value=skill.damage_key.value,
-                            on_change=skill_key_change,
+                        ft.Switch(
+                            label="剧变反应伤害",
+                            value=bool(skill.transformative_damage_key),
+                            on_change=skill_key_change_to_transformative,
                         ),
+                        normal_skill_ft,
+                        transformative_skill_ft,
                         ft.ElevatedButton("关闭", on_click=close_bs),
                     ],
                     tight=True,
