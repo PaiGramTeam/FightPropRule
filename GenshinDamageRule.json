@@ -358,10 +358,10 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "持续伤害 - 万叶之一刀",
-                "index": 21,
-                "damage_key": "normal",
-                "transformative_damage_key": null
+                "name": "烈绽放剧变反应伤害",
+                "index": 22,
+                "damage_key": null,
+                "transformative_damage_key": "hyper_bloom"
             }
         ],
         "config": null,
@@ -887,9 +887,9 @@
     "提纳里": {
         "skills": [
             {
-                "name": "一段蓄力瞄准射击 - 普通攻击·藏蕴破障",
+                "name": "一段蓄力瞄准射击 - 蔓激化",
                 "index": 5,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
@@ -911,8 +911,8 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "高空坠地冲击伤害 - 普通攻击·藏蕴破障",
-                "index": 11,
+                "name": "技能伤害 - 识果种雷",
+                "index": 12,
                 "damage_key": "normal",
                 "transformative_damage_key": null
             }
