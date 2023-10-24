@@ -343,8 +343,20 @@
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "DodocoTales": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "LostPrayerToTheSacredWinds": {
+                "stack": 4.0
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 3.0
+            }
+        }
     },
     "甘雨": {
         "skills": [
@@ -646,5 +658,100 @@
                 "stack": 3.0
             }
         }
+    },
+    "菲谢尔": {
+        "skills": [
+            {
+                "name": "奥兹攻击伤害 - 夜巡影翼",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "落雷伤害 - 至夜幻现",
+                "index": 12,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "达达利亚": {
+        "skills": [
+            {
+                "name": "四段伤害 - 魔王武装·狂澜",
+                "index": 17,
+                "damage_key": "normal"
+            },
+            {
+                "name": "断流·斩伤害 - 魔王武装·狂澜",
+                "index": 23,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害·近战 - 极恶技·尽灭闪",
+                "index": 24,
+                "damage_key": "normal"
+            },
+            {
+                "name": "断流·爆伤害 - 极恶技·尽灭闪",
+                "index": 26,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 4
+            }
+        },
+        "artifact_config": {
+            "config_nymphs_dream": {
+                "w3": 0.7,
+                "w2": 0.2,
+                "w1": 0.1,
+                "rate": 1.0
+            }
+        }
+    },
+    "琴": {
+        "skills": [
+            {
+                "name": "领域发动治疗量 - 蒲公英之风",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续治疗 - 蒲公英之风",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "瑶瑶": {
+        "skills": [
+            {
+                "name": "白玉萝卜治疗量 - 云台团团降芦菔",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "桂子仙机白玉萝卜治疗量 - 玉颗珊珊月中落",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "c4_rate": 1.0
+        },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
     }
 }
