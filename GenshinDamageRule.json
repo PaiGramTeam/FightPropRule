@@ -680,11 +680,6 @@
     "达达利亚": {
         "skills": [
             {
-                "name": "四段伤害 - 魔王武装·狂澜",
-                "index": 17,
-                "damage_key": "normal"
-            },
-            {
                 "name": "断流·斩伤害 - 魔王武装·狂澜",
                 "index": 23,
                 "damage_key": "normal"
@@ -692,7 +687,12 @@
             {
                 "name": "技能伤害·近战 - 极恶技·尽灭闪",
                 "index": 24,
-                "damage_key": "normal"
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "技能伤害·远程 - 极恶技·尽灭闪",
+                "index": 25,
+                "damage_key": "vaporize"
             },
             {
                 "name": "断流·爆伤害 - 极恶技·尽灭闪",
@@ -750,6 +750,29 @@
         "config": {
             "c4_rate": 1.0
         },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "魈": {
+        "skills": [
+            {
+                "name": "低空坠地冲击伤害 - 普通攻击·卷积微尘",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "高空坠地冲击伤害 - 普通攻击·卷积微尘",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 风轮两立",
+                "index": 14,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
         "config_skill": null,
         "config_weapon": null,
         "artifact_config": null
