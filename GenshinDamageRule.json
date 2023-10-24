@@ -129,6 +129,12 @@
                 "transformative_damage_key": null
             },
             {
+                "name": "重击激化伤害 - 普通攻击·行相",
+                "index": 4,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
                 "name": "点按伤害 - 所闻遍计",
                 "index": 8,
                 "damage_key": "normal",
@@ -144,6 +150,12 @@
                 "name": "灭净三业伤害 - 所闻遍计",
                 "index": 10,
                 "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "灭净三业激化伤害 - 所闻遍计",
+                "index": 10,
+                "damage_key": "spread",
                 "transformative_damage_key": null
             }
         ],
