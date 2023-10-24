@@ -25,7 +25,7 @@
         },
         "config_weapon": {
             "StaffOfHoma": {
-                "be50_rate": 1
+                "be50_rate": 1.0
             }
         },
         "artifact_config": {
@@ -86,36 +86,6 @@
                 "damage_key": "normal"
             },
             {
-                "name": "奥义•梦想真说-一段伤害",
-                "index": 13,
-                "damage_key": "normal"
-            },
-            {
-                "name": "奥义•梦想真说-二段伤害",
-                "index": 14,
-                "damage_key": "normal"
-            },
-            {
-                "name": "奥义•梦想真说-三段伤害",
-                "index": 15,
-                "damage_key": "normal"
-            },
-            {
-                "name": "奥义•梦想真说-四段伤害-1",
-                "index": 16,
-                "damage_key": "normal"
-            },
-            {
-                "name": "奥义•梦想真说-四段伤害-2",
-                "index": 17,
-                "damage_key": "normal"
-            },
-            {
-                "name": "奥义•梦想真说-五段伤害",
-                "index": 18,
-                "damage_key": "normal"
-            },
-            {
                 "name": "奥义•梦想真说-重击伤害-1",
                 "index": 19,
                 "damage_key": "normal"
@@ -137,5 +107,544 @@
             }
         },
         "artifact_config": null
+    },
+    "纳西妲": {
+        "skills": [
+            {
+                "name": "重击伤害 - 普通攻击·行相",
+                "index": 4,
+                "damage_key": "normal"
+            },
+            {
+                "name": "点按伤害 - 所闻遍计",
+                "index": 8,
+                "damage_key": "normal"
+            },
+            {
+                "name": "长按伤害 - 所闻遍计",
+                "index": 9,
+                "damage_key": "normal"
+            },
+            {
+                "name": "灭净三业伤害 - 所闻遍计",
+                "index": 10,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "c4_e_count": 3
+        },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "宵宫": {
+        "skills": [
+            {
+                "name": "一段伤害/2 - 普通攻击·烟火打扬",
+                "index": 0,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "二段伤害 - 普通攻击·烟火打扬",
+                "index": 1,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "三段伤害 - 普通攻击·烟火打扬",
+                "index": 2,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "四段伤害/2 - 普通攻击·烟火打扬",
+                "index": 3,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "五段伤害 - 普通攻击·烟火打扬",
+                "index": 4,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "琉金火光爆炸伤害 - 琉金云间草",
+                "index": 12,
+                "damage_key": "vaporize"
+            }
+        ],
+        "config": {
+            "talent1_level": 10.0
+        },
+        "config_skill": {
+            "after_e": true
+        },
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "优菈": {
+        "skills": [
+            {
+                "name": "技能伤害 - 凝浪之光剑",
+                "index": 16,
+                "damage_key": "normal"
+            },
+            {
+                "name": "光降之剑 - 凝浪之光剑",
+                "index": 17,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "SongOfBrokenPines": {
+                "rate": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_pale_flame": {
+                "avg_level": 2.0,
+                "full_rate": 1.0
+            }
+        }
+    },
+    "钟离": {
+        "skills": [
+            {
+                "name": "岩脊伤害 - 地心",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "长按伤害 - 地心",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 天星",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "八重神子": {
+        "skills": [
+            {
+                "name": "杀生樱伤害·叁阶 - 野干役咒·杀生樱",
+                "index": 9,
+                "damage_key": "normal"
+            },
+            {
+                "name": "杀生樱伤害·肆阶 - 野干役咒·杀生樱",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 大密法·天狐显真",
+                "index": 11,
+                "damage_key": "normal"
+            },
+            {
+                "name": "天狐霆雷伤害 - 大密法·天狐显真",
+                "index": 12,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "刻晴": {
+        "skills": [
+            {
+                "name": "雷暴连斩伤害/2 - 星斗归位",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 天街巡游",
+                "index": 15,
+                "damage_key": "normal"
+            },
+            {
+                "name": "连斩伤害/8 - 天街巡游",
+                "index": 16,
+                "damage_key": "normal"
+            },
+            {
+                "name": "最后一击伤害 - 天街巡游",
+                "index": 18,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "talent2_rate": 0.5
+        },
+        "config_skill": {
+            "after_e": true
+        },
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "枫原万叶": {
+        "skills": [
+            {
+                "name": "点按技能伤害 - 千早振",
+                "index": 18,
+                "damage_key": "normal"
+            },
+            {
+                "name": "长按技能伤害 - 千早振",
+                "index": 19,
+                "damage_key": "normal"
+            },
+            {
+                "name": "斩击伤害 - 万叶之一刀",
+                "index": 20,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续伤害 - 万叶之一刀",
+                "index": 21,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "可莉": {
+        "skills": [
+            {
+                "name": "重击伤害 - 普通攻击·砰砰",
+                "index": 3,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "重击伤害（带天赋） - 普通攻击·砰砰",
+                "index": 4,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "蹦蹦炸弹伤害 - 蹦蹦炸弹",
+                "index": 8,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "轰轰火花伤害 - 轰轰火花",
+                "index": 10,
+                "damage_key": "vaporize"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "甘雨": {
+        "skills": [
+            {
+                "name": "霜华矢命中伤害 - 普通攻击·流天射术",
+                "index": 8,
+                "damage_key": "normal"
+            },
+            {
+                "name": "霜华矢·霜华绽发伤害 - 普通攻击·流天射术",
+                "index": 9,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 山泽麟迹",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "冰棱伤害 - 降众天华",
+                "index": 14,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "talent2_rate": 0.6
+        },
+        "config_skill": {
+            "talent1_rate": 0.8
+        },
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "珊瑚宫心海": {
+        "skills": [
+            {
+                "name": "治疗量 - 海月之誓",
+                "index": 7,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 海人化羽",
+                "index": 9,
+                "damage_key": "normal"
+            },
+            {
+                "name": "命中治疗量 - 海人化羽",
+                "index": 10,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "七七": {
+        "skills": [
+            {
+                "name": "命中治疗量 - 仙法·寒病鬼差",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续治疗量 - 仙法·寒病鬼差",
+                "index": 14,
+                "damage_key": "normal"
+            },
+            {
+                "name": "治疗量 - 仙法·救苦度厄",
+                "index": 17,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "莫娜": {
+        "skills": [
+            {
+                "name": "重击伤害 - 普通攻击·因果点破",
+                "index": 4,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续伤害 - 水中幻愿",
+                "index": 8,
+                "damage_key": "normal"
+            },
+            {
+                "name": "爆裂伤害 - 水中幻愿",
+                "index": 9,
+                "damage_key": "normal"
+            },
+            {
+                "name": "泡影破裂伤害 - 星命定轨",
+                "index": 10,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "迪卢克": {
+        "skills": [
+            {
+                "name": "斩击伤害 - 黎明",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续伤害 - 黎明",
+                "index": 13,
+                "damage_key": "normal"
+            },
+            {
+                "name": "爆裂伤害 - 黎明",
+                "index": 14,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "香菱": {
+        "skills": [
+            {
+                "name": "喷火伤害 - 锅巴出击",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "三段挥舞伤害 - 旋火轮",
+                "index": 15,
+                "damage_key": "vaporize"
+            },
+            {
+                "name": "旋火轮伤害 - 旋火轮",
+                "index": 16,
+                "damage_key": "vaporize"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "芭芭拉": {
+        "skills": [
+            {
+                "name": "命中治疗量 - 演唱，开始♪",
+                "index": 8,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续治疗量 - 演唱，开始♪",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "治疗量 - 闪耀奇迹♪",
+                "index": 11,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "白术": {
+        "skills": [
+            {
+                "name": "治疗量 - 太素诊要",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "无郤气护盾治疗量 - 愈气全形论",
+                "index": 11,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "hp_below_50": true
+        },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "神里绫华": {
+        "skills": [
+            {
+                "name": "重击伤害/3 - 普通攻击·神里流·倾",
+                "index": 6,
+                "damage_key": "normal"
+            },
+            {
+                "name": "技能伤害 - 神里流·冰华",
+                "index": 11,
+                "damage_key": "normal"
+            },
+            {
+                "name": "切割伤害 - 神里流·霜灭",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "绽放伤害 - 神里流·霜灭",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "talent1_rate": 1.0,
+            "talent2_rate": 1.0
+        },
+        "config_skill": {
+            "after_dash": true,
+            "use_c6": false
+        },
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 3
+            }
+        },
+        "artifact_config": null
+    },
+    "迪奥娜": {
+        "skills": [
+            {
+                "name": "猫爪伤害 - 猫爪冻冻",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "领域持续伤害 - 最烈特调",
+                "index": 12,
+                "damage_key": "normal"
+            },
+            {
+                "name": "持续治疗量 - 最烈特调",
+                "index": 13,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "凝光": {
+        "skills": [
+            {
+                "name": "技能伤害 - 璇玑屏",
+                "index": 6,
+                "damage_key": "normal"
+            },
+            {
+                "name": "每颗宝石伤害 - 天权崩玉",
+                "index": 7,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "talent2_rate": 1.0
+        },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "那维莱特": {
+        "skills": [
+            {
+                "name": "重击·衡平推裁",
+                "index": 4,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "current_hp": 0
+        },
+        "config_skill": {
+            "talent1_stack": 3
+        },
+        "config_weapon": {
+            "TomeOfTheEternalFlow": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_marechaussee_hunter": {
+                "stack": 3.0
+            }
+        }
     }
 }
