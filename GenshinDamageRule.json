@@ -820,5 +820,88 @@
             }
         },
         "artifact_config": null
+    },
+    "阿贝多": {
+        "skills": [
+            {
+                "name": "五段伤害 - 普通攻击·西风剑术·白",
+                "index": 4,
+                "damage_key": "normal"
+            },
+            {
+                "name": "下坠期间伤害 - 普通攻击·西风剑术·白",
+                "index": 7,
+                "damage_key": "normal"
+            },
+            {
+                "name": "高空坠地冲击伤害 - 普通攻击·西风剑术·白",
+                "index": 9,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "林尼": {
+        "skills": [
+            {
+                "name": "一段蓄力瞄准射击 - 普通攻击·迫牌易位式",
+                "index": 5,
+                "damage_key": "normal"
+            },
+            {
+                "name": "隐具魔术箭伤害 - 普通攻击·迫牌易位式",
+                "index": 6,
+                "damage_key": "normal"
+            },
+            {
+                "name": "礼花术弹伤害 - 普通攻击·迫牌易位式",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "灵息之刺伤害 - 普通攻击·迫牌易位式",
+                "index": 11,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "c2_stack": 3.0,
+            "c4_rate": 1.0
+        },
+        "config_skill": {
+            "prop_stack": 5.0,
+            "under_pyro": true,
+            "pyro_count": 2
+        },
+        "config_weapon": null,
+        "artifact_config": {
+            "config_lavawalker": {
+                "rate": 1.0
+            },
+            "config_marechaussee_hunter": {
+                "stack": 3.0
+            }
+        }
+    },
+    "埃洛伊": {
+        "skills": [
+            {
+                "name": "四段伤害 - 普通攻击·快速射击",
+                "index": 4,
+                "damage_key": "normal"
+            },
+            {
+                "name": "满蓄力瞄准射击 - 普通攻击·快速射击",
+                "index": 6,
+                "damage_key": "normal"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
     }
 }
