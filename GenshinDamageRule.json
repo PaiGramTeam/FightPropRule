@@ -737,7 +737,7 @@
             }
         ],
         "config": {
-            "current_hp": 0
+            "current_hp": 100
         },
         "config_skill": {
             "talent1_stack": 3
