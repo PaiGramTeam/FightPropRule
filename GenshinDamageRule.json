@@ -137,13 +137,13 @@
             {
                 "name": "点按伤害 - 所闻遍计",
                 "index": 8,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
                 "name": "长按伤害 - 所闻遍计",
                 "index": 9,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
@@ -163,8 +163,54 @@
             "c4_e_count": 3
         },
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 0.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.11,
+                "t2_rate": 0.11,
+                "t3_rate": 0.11
+            },
+            "SolarPearl": {
+                "rate1": 0.2,
+                "rate2": 0.2
+            },
+            "MappaMare": {
+                "stack": 2.0
+            },
+            "KagurasVerity": {
+                "stack": 1.5,
+                "full_rate": 0.5
+            },
+            "MagicGuide": {
+                "rate": 0.5
+            },
+            "FruitOfFulfillment": {
+                "stack": 5.0
+            },
+            "WanderingEvenstar": {
+                "rate": 1.0
+            },
+            "AThousandFloatingDreams": {
+                "same_count": 2,
+                "diff_count": 2
+            },
+            "FlowingPurity": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_deepwood_memories": {
+                "rate": 1.0
+            },
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 0.9
+            }
+        }
     },
     "宵宫": {
         "skills": [
@@ -211,7 +257,34 @@
         "config_skill": {
             "after_e": true
         },
-        "config_weapon": null,
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 2
+            },
+            "ThunderingPulse": {
+                "stack": 3
+            },
+            "AmosBow": {
+                "stack": 2.0
+            },
+            "Hamayumi": {
+                "rate": 0.8
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "Slingshot": {
+                "is_effect": true,
+                "rate": 1.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 1.0,
+                "diff_count": 3.0
+            },
+            "SongOfStillness": {
+                "rate": 0.8
+            }
+        },
         "artifact_config": null
     },
     "优菈": {
@@ -266,53 +339,118 @@
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "EngulfingLightning": {
+                "rate": 1.0
+            },
+            "PrimordialJadeWingedSpear": {
+                "stack": 2.0,
+                "full_rate": 0.0
+            },
+            "CalamityQueller": {
+                "stack": 6.0
+            },
+            "StaffOfHoma": {
+                "be50_rate": 0.0
+            },
+            "VortexVanquisher": {
+                "stack": 2.0,
+                "shield_rate": 1.0
+            },
+            "LithicSpear": {
+                "liyue_count": 3
+            },
+            "Deathmatch": {
+                "ge2": true
+            },
+            "WavebreakersFin": {
+                "energy": 280
+            }
+        },
+        "artifact_config": {
+            "config_tenacity_of_the_millelith": {
+                "rate": 1.0
+            }
+        }
     },
     "八重神子": {
         "skills": [
             {
                 "name": "杀生樱伤害·叁阶 - 野干役咒·杀生樱",
                 "index": 9,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
                 "name": "杀生樱伤害·肆阶 - 野干役咒·杀生樱",
                 "index": 10,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 大密法·天狐显真",
                 "index": 11,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
                 "name": "天狐霆雷伤害 - 大密法·天狐显真",
                 "index": 12,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             }
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 1.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.15,
+                "t2_rate": 0.15,
+                "t3_rate": 0.15
+            },
+            "KagurasVerity": {
+                "stack": 3.0,
+                "full_rate": 1.0
+            },
+            "OathswornEye": {
+                "rate": 1.0
+            },
+            "MagicGuide": {
+                "rate": 1.0
+            },
+            "AThousandFloatingDreams": {
+                "same_count": 1,
+                "diff_count": 3
+            },
+            "WanderingEvenstar": {
+                "rate": 1.0
+            },
+            "FlowingPurity": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_golden_troupe": {
+                "rate": 0.95
+            }
+        }
     },
     "刻晴": {
         "skills": [
             {
-                "name": "雷暴连斩伤害/2 - 星斗归位",
-                "index": 13,
-                "damage_key": "normal",
+                "name": "雷楔伤害 - 星斗归位",
+                "index": 11,
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 天街巡游",
-                "index": 15,
-                "damage_key": "normal",
+                "name": "斩击伤害 - 星斗归位",
+                "index": 12,
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
@@ -324,17 +462,45 @@
             {
                 "name": "最后一击伤害 - 天街巡游",
                 "index": 18,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             }
         ],
         "config": {
-            "talent2_rate": 0.5
+            "talent2_rate": 0.6
         },
         "config_skill": {
             "after_e": true
         },
-        "config_weapon": null,
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 3
+            },
+            "SummitShaper": {
+                "stack": 5.0,
+                "shield_rate": 1.0
+            },
+            "LionsRoar": {
+                "rate": 1.0
+            },
+            "HarbingerOfDawn": {
+                "rate": 1.0
+            },
+            "CursedBlade": {
+                "rate": 1.0
+            },
+            "LightOfFoliarIncision": {
+                "rate": 1.0
+            },
+            "WolfFang": {
+                "e_stack": 1.0,
+                "q_stack": 3.4
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
         "artifact_config": null
     },
     "枫原万叶": {
@@ -422,25 +588,25 @@
             {
                 "name": "霜华矢命中伤害 - 普通攻击·流天射术",
                 "index": 8,
-                "damage_key": "normal",
+                "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
                 "name": "霜华矢·霜华绽发伤害 - 普通攻击·流天射术",
                 "index": 9,
-                "damage_key": "normal",
+                "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 山泽麟迹",
                 "index": 13,
-                "damage_key": "normal",
+                "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
                 "name": "冰棱伤害 - 降众天华",
                 "index": 14,
-                "damage_key": "normal",
+                "damage_key": "melt",
                 "transformative_damage_key": null
             }
         ],
@@ -450,8 +616,59 @@
         "config_skill": {
             "talent1_rate": 0.8
         },
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 4
+            },
+            "AmosBow": {
+                "stack": 5.0
+            },
+            "PrototypeCrescent": {
+                "rate": 0.0
+            },
+            "MouunsMoon": {
+                "energy": 280
+            },
+            "Hamayumi": {
+                "rate": 1.0
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "HuntersPath": {
+                "rate": 1.0
+            },
+            "FadingTwilight": {
+                "state": 2
+            },
+            "KingsSquire": {
+                "rate": 1.0
+            },
+            "IbisPiercer": {
+                "stack": 1.5
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 1.0,
+                "diff_count": 3.0
+            },
+            "ScionOfTheBlazingSun": {
+                "rate": 1.0
+            },
+            "SongOfStillness": {
+                "rate": 1.0
+            },
+            "RangeGauge": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_blizzard_strayer": {
+                "critical_bonus": 30.0
+            },
+            "config_noblesse_oblige": {
+                "rate": 0.7
+            }
+        }
     },
     "珊瑚宫心海": {
         "skills": [
@@ -540,40 +757,69 @@
     "迪卢克": {
         "skills": [
             {
+                "name": "一段伤害 - 普通攻击·淬炼之剑",
+                "index": 0,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "低空坠地冲击伤害 - 普通攻击·淬炼之剑",
+                "index": 7,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "三段伤害 - 逆焰之刃",
+                "index": 11,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
                 "name": "斩击伤害 - 黎明",
                 "index": 12,
-                "damage_key": "normal",
-                "transformative_damage_key": null
-            },
-            {
-                "name": "持续伤害 - 黎明",
-                "index": 13,
-                "damage_key": "normal",
-                "transformative_damage_key": null
-            },
-            {
-                "name": "爆裂伤害 - 黎明",
-                "index": 14,
-                "damage_key": "normal",
+                "damage_key": "melt",
                 "transformative_damage_key": null
             }
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "WolfsGravestone": {
+                "rate": 0.2
+            },
+            "TheUnforged": {
+                "shield_rate": 1.0,
+                "stack": 4.0
+            },
+            "SerpentSpine": {
+                "stack": 4.0
+            },
+            "Rainslasher": {
+                "rate": 0.0
+            },
+            "BeaconOfTheReedSea": {
+                "rate_atk": 0.5,
+                "rate_hp": 1.0
+            },
+            "MailedFlower": {
+                "rate": 0.9
+            },
+            "TalkingStick": {
+                "rate1": 1.0,
+                "rate2": 0.0
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 3.0
+            }
+        }
     },
     "香菱": {
         "skills": [
             {
                 "name": "喷火伤害 - 锅巴出击",
                 "index": 12,
-                "damage_key": "normal",
-                "transformative_damage_key": null
-            },
-            {
-                "name": "三段挥舞伤害 - 旋火轮",
-                "index": 15,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
@@ -586,8 +832,55 @@
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "EngulfingLightning": {
+                "rate": 1.0
+            },
+            "PrimordialJadeWingedSpear": {
+                "stack": 2.0,
+                "full_rate": 0.0
+            },
+            "CalamityQueller": {
+                "stack": 6.0,
+                "backend_rate": 0.0
+            },
+            "StaffOfHoma": {
+                "be50_rate": 0.0
+            },
+            "VortexVanquisher": {
+                "shield_rate": 0.0,
+                "stack": 2.0
+            },
+            "LithicSpear": {
+                "liyue_count": 2
+            },
+            "DragonsBane": {
+                "rate": 1.0
+            },
+            "Deathmatch": {
+                "ge2": true
+            },
+            "WavebreakersFin": {
+                "energy": 280
+            },
+            "MissiveWindspear": {
+                "rate": 1.0
+            },
+            "StaffOfTheScarletSands": {
+                "stack": 1.0
+            },
+            "BalladOfTheFjords": {
+                "use_effect": true
+            },
+            "ProspectorsDrill": {
+                "stack": 2.0
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 1.0
+            }
+        }
     },
     "芭芭拉": {
         "skills": [
@@ -675,9 +968,31 @@
         "config_weapon": {
             "MistsplitterReforged": {
                 "emblem_level": 3
+            },
+            "SummitShaper": {
+                "stack": 5.0,
+                "shield_rate": 1.0
+            },
+            "HaranGeppakuFutsu": {
+                "stack": 2.0
+            },
+            "CursedBlade": {
+                "rate": 1.0
+            },
+            "WolfFang": {
+                "e_stack": 0.0,
+                "q_stack": 4.0
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
             }
         },
-        "artifact_config": null
+        "artifact_config": {
+            "config_blizzard_strayer": {
+                "critical_bonus": 35.0
+            }
+        }
     },
     "迪奥娜": {
         "skills": [
@@ -758,23 +1073,57 @@
             {
                 "name": "奥兹攻击伤害 - 夜巡影翼",
                 "index": 10,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
                 "name": "落雷伤害 - 至夜幻现",
                 "index": 12,
-                "damage_key": "normal",
+                "damage_key": "aggravate",
                 "transformative_damage_key": null
             }
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 3
+            },
+            "ElegyOfTheEnd": {
+                "rate": 0.5
+            },
+            "MitternachtsWaltz": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "FadingTwilight": {
+                "state": 2
+            },
+            "HuntersPath": {
+                "rate": 0.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 2.0,
+                "diff_count": 2.0
+            }
+        },
+        "artifact_config": {
+            "config_golden_troupe": {
+                "rate": 1.0
+            }
+        }
     },
     "达达利亚": {
         "skills": [
+            {
+                "name": "重击伤害-2 - 魔王武装·狂澜",
+                "index": 22,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
             {
                 "name": "断流·斩伤害 - 魔王武装·狂澜",
                 "index": 23,
@@ -796,7 +1145,7 @@
             {
                 "name": "断流·爆伤害 - 极恶技·尽灭闪",
                 "index": 26,
-                "damage_key": "normal",
+                "damage_key": "vaporize",
                 "transformative_damage_key": null
             }
         ],
@@ -805,6 +1154,37 @@
         "config_weapon": {
             "PolarStar": {
                 "stack": 4
+            },
+            "ThunderingPulse": {
+                "stack": 3
+            },
+            "AmosBow": {
+                "stack": 0.0
+            },
+            "Hamayumi": {
+                "rate": 0.0
+            },
+            "RavenBow": {
+                "rate": 1.0
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "HuntersPath": {
+                "rate": 0.4
+            },
+            "IbisPiercer": {
+                "stack": 2.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 1.0,
+                "diff_count": 3.0
+            },
+            "ScionOfTheBlazingSun": {
+                "rate": 1.0
+            },
+            "SongOfStillness": {
+                "rate": 1.0
             }
         },
         "artifact_config": {
@@ -887,33 +1267,33 @@
     "提纳里": {
         "skills": [
             {
-                "name": "一段蓄力瞄准射击 - 蔓激化",
-                "index": 5,
-                "damage_key": "spread",
-                "transformative_damage_key": null
-            },
-            {
                 "name": "花筥箭伤害 - 普通攻击·藏蕴破障",
                 "index": 6,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
                 "name": "藏蕴花矢伤害 - 普通攻击·藏蕴破障",
                 "index": 7,
-                "damage_key": "normal",
-                "transformative_damage_key": null
-            },
-            {
-                "name": "低空坠地冲击伤害 - 普通攻击·藏蕴破障",
-                "index": 10,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 识果种雷",
                 "index": 12,
                 "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "缠藤箭伤害 - 造生缠藤箭",
+                "index": 13,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "次级缠藤箭伤害 - 造生缠藤箭",
+                "index": 14,
+                "damage_key": "spread",
                 "transformative_damage_key": null
             }
         ],
@@ -925,9 +1305,43 @@
         "config_weapon": {
             "AmosBow": {
                 "stack": 1.0
+            },
+            "PolarStar": {
+                "stack": 4
+            },
+            "Hamayumi": {
+                "rate": 0.2
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "HuntersPath": {
+                "rate": 1.0
+            },
+            "KingsSquire": {
+                "rate": 1.0
+            },
+            "IbisPiercer": {
+                "stack": 1.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 2.0,
+                "diff_count": 2.0
+            },
+            "ScionOfTheBlazingSun": {
+                "rate": 1.0
             }
         },
-        "artifact_config": null
+        "artifact_config": {
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 1.0
+            },
+            "config_deepwood_memories": {
+                "rate": 1.0
+            }
+        }
     },
     "阿贝多": {
         "skills": [
@@ -958,12 +1372,6 @@
     "林尼": {
         "skills": [
             {
-                "name": "一段蓄力瞄准射击 - 普通攻击·迫牌易位式",
-                "index": 5,
-                "damage_key": "normal",
-                "transformative_damage_key": null
-            },
-            {
                 "name": "隐具魔术箭伤害 - 普通攻击·迫牌易位式",
                 "index": 6,
                 "damage_key": "normal",
@@ -976,9 +1384,15 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "灵息之刺伤害 - 普通攻击·迫牌易位式",
-                "index": 11,
-                "damage_key": "normal",
+                "name": "技能伤害 - 眩惑光戏法",
+                "index": 12,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "引爆礼花伤害 - 大魔术·灵迹巡游",
+                "index": 14,
+                "damage_key": null,
                 "transformative_damage_key": null
             }
         ],
@@ -991,13 +1405,42 @@
             "under_pyro": true,
             "pyro_count": 2
         },
-        "config_weapon": null,
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 4
+            },
+            "AmosBow": {
+                "stack": 2.0
+            },
+            "Hamayumi": {
+                "rate": 0.5
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "KingsSquire": {
+                "rate": 1.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 3.0,
+                "diff_count": 1.0
+            },
+            "ScionOfTheBlazingSun": {
+                "rate": 1.0
+            },
+            "SongOfStillness": {
+                "rate": 1.0
+            }
+        },
         "artifact_config": {
             "config_lavawalker": {
                 "rate": 1.0
             },
             "config_marechaussee_hunter": {
                 "stack": 3.0
+            },
+            "config_crimson_witch_of_flames": {
+                "level": 1.0
             }
         }
     },
@@ -1020,5 +1463,753 @@
         "config_skill": null,
         "config_weapon": null,
         "artifact_config": null
+    },
+    "艾尔海森": {
+        "skills": [
+            {
+                "name": "3枚光幕攻击伤害 - 共相·理式摹写",
+                "index": 14,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "单次伤害 - 殊境·显象缚结",
+                "index": 15,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": {
+            "under_e": true
+        },
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 3
+            },
+            "IronSting": {
+                "stack": 2.0
+            },
+            "HarbingerOfDawn": {
+                "rate": 1.0
+            },
+            "HaranGeppakuFutsu": {
+                "stack": 2.0
+            },
+            "ToukabouShigure": {
+                "rate": 1.0
+            },
+            "LightOfFoliarIncision": {
+                "rate": 1.0
+            },
+            "WolfFang": {
+                "q_stack": 2.0,
+                "e_stack": 4.0
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "FleuveCendreFerryman": {
+                "rate": 1.0
+            },
+            "CursedBlade": {
+                "rate": 0.7
+            }
+        },
+        "artifact_config": {
+            "config_deepwood_memories": {
+                "rate": 1.0
+            },
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 1.0
+            }
+        }
+    },
+    "北斗": {
+        "skills": [
+            {
+                "name": "二层伤害 - 捉浪",
+                "index": 12,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "闪电伤害 - 斫雷",
+                "index": 14,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "WolfsGravestone": {
+                "rate": 0.1
+            },
+            "TheUnforged": {
+                "stack": 1.0,
+                "shield_rate": 0.0
+            },
+            "Akuoumaru": {
+                "energy": 280
+            },
+            "SerpentSpine": {
+                "stack": 5.0
+            },
+            "Rainslasher": {
+                "rate": 1.0
+            },
+            "LithicBlade": {
+                "liyue_count": 2
+            },
+            "BloodstainedGreatsword": {
+                "rate": 1.0
+            },
+            "ForestRegalia": {
+                "rate": 0.5
+            },
+            "MakhairaAquamarine": {
+                "rate": 1.0
+            },
+            "BeaconOfTheReedSea": {
+                "rate_atk": 0.5,
+                "rate_hp": 1.0
+            },
+            "MailedFlower": {
+                "rate": 1.0
+            },
+            "TalkingStick": {
+                "rate1": 0.0,
+                "rate2": 1.0
+            },
+            "PortablePowerSaw": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 0.9
+            }
+        }
+    },
+    "安柏": {
+        "skills": [
+            {
+                "name": "满蓄力瞄准射击 - 普通攻击·神射手",
+                "index": 6,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "爆炸伤害 - 爆弹玩偶",
+                "index": 10,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "箭雨总伤害 - 箭雨",
+                "index": 12,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "PolarStar": {
+                "stack": 3
+            },
+            "ElegyOfTheEnd": {
+                "rate": 0.5
+            },
+            "AmosBow": {
+                "stack": 3.0
+            },
+            "PrototypeCrescent": {
+                "rate": 1.0
+            },
+            "Hamayumi": {
+                "rate": 1.0
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            },
+            "HuntersPath": {
+                "rate": 1.0
+            },
+            "KingsSquire": {
+                "rate": 1.0
+            },
+            "IbisPiercer": {
+                "stack": 1.0
+            },
+            "TheFirstGreatMagic": {
+                "same_count": 3.0,
+                "diff_count": 1.0
+            },
+            "ScionOfTheBlazingSun": {
+                "rate": 1.0
+            },
+            "RangeGauge": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 1.0
+            }
+        }
+    },
+    "凯亚": {
+        "skills": [
+            {
+                "name": "技能伤害 - 霜袭",
+                "index": 10,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 凛冽轮舞",
+                "index": 11,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 2
+            },
+            "CursedBlade": {
+                "rate": 1.0
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
+        "artifact_config": null
+    },
+    "久岐忍": {
+        "skills": [
+            {
+                "name": "技能伤害 - 越祓雷草之轮",
+                "index": 10,
+                "damage_key": null,
+                "transformative_damage_key": "burgeon"
+            },
+            {
+                "name": "越祓草轮治疗量 - 越祓雷草之轮",
+                "index": 11,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "越祓草轮伤害 - 越祓雷草之轮",
+                "index": 12,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "单次伤害 - 御咏鸣神刈山祭",
+                "index": 13,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": {
+            "hp_le_50": true
+        },
+        "config_skill": null,
+        "config_weapon": {
+            "FreedomSworn": {
+                "rate": 0.5
+            },
+            "IronSting": {
+                "stack": 1.0
+            },
+            "DarkIronSword": {
+                "rate": 1.0
+            },
+            "SapwoodBlade": {
+                "rate": 0.5
+            },
+            "XiphosMoonlight": {
+                "rate": 1.0
+            },
+            "KeyOfKhajNisut": {
+                "stack": 3.0
+            },
+            "ToukabouShigure": {
+                "rate": 0.5
+            },
+            "WolfFang": {
+                "e_stack": 3.5,
+                "q_stack": 3.0
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "TheDockhandsAssistant": {
+                "stack": 3.0
+            },
+            "FleuveCendreFerryman": {
+                "rate": 0.33
+            }
+        },
+        "artifact_config": {
+            "config_gilded_dreams": {
+                "same_count": 1,
+                "diff_count": 3,
+                "rate": 1.0
+            },
+            "config_instructor": {
+                "rate": 1.0
+            },
+            "config_tenacity_of_the_millelith": {
+                "rate": 1.0
+            },
+            "config_flower_of_paradise_lost": {
+                "stack": 4.0
+            }
+        }
+    },
+    "妮露": {
+        "skills": [
+            {
+                "name": "剑舞步一段伤害 - 七域舞步",
+                "index": 9,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "剑舞步二段伤害 - 七域舞步",
+                "index": 11,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "水月伤害 - 七域舞步",
+                "index": 13,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "水轮伤害 - 七域舞步",
+                "index": 14,
+                "damage_key": null,
+                "transformative_damage_key": "bloom"
+            },
+            {
+                "name": "技能伤害 - 浮莲舞步·远梦聆泉",
+                "index": 15,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "永世流沔伤害 - 浮莲舞步·远梦聆泉",
+                "index": 16,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": {
+            "golden_rate": 1.0
+        },
+        "config_skill": null,
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 3
+            },
+            "IronSting": {
+                "stack": 2.0
+            },
+            "HarbingerOfDawn": {
+                "rate": 1.0
+            },
+            "KeyOfKhajNisut": {
+                "stack": 3.0
+            },
+            "WolfFang": {
+                "e_stack": 4.0,
+                "q_stack": 1.0
+            },
+            "TheDockhandsAssistant": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": null
+    },
+    "鹿野院平藏": {
+        "skills": [
+            {
+                "name": "技能伤害-4层 - 勠心拳",
+                "index": 16,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "不动流·真空弹伤害 - 聚风蹴",
+                "index": 17,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 0.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.11,
+                "t2_rate": 0.11,
+                "t3_rate": 0.11
+            },
+            "SolarPearl": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "MappaMare": {
+                "stack": 1.0
+            }
+        },
+        "artifact_config": null
+    },
+    "砂糖": {
+        "skills": [
+            {
+                "name": "技能伤害 - 风灵作成·陆叁零捌",
+                "index": 8,
+                "damage_key": null,
+                "transformative_damage_key": "swirl_electro"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "MagicGuide": {
+                "rate": 1.0
+            },
+            "FruitOfFulfillment": {
+                "stack": 5.0
+            },
+            "WanderingEvenstar": {
+                "rate": 1.0
+            },
+            "AThousandFloatingDreams": {
+                "same_count": 1,
+                "diff_count": 3
+            }
+        },
+        "artifact_config": null
+    },
+    "行秋": {
+        "skills": [
+            {
+                "name": "技能伤害-1 - 古华剑·画雨笼山",
+                "index": 15,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害-2 - 古华剑·画雨笼山",
+                "index": 16,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "剑雨伤害 - 古华剑·裁雨留虹",
+                "index": 17,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "WolfFang": {
+                "e_stack": 1.0,
+                "q_stack": 4.0
+            },
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
+        "artifact_config": null
+    },
+    "绮良良": {
+        "skills": [
+            {
+                "name": "甩尾飞踢伤害 - 呜喵町飞足",
+                "index": 11,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "翻正爪击伤害 - 呜喵町飞足",
+                "index": 13,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 秘法·惊喜特派",
+                "index": 14,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "猫草豆蔻爆炸伤害 - 秘法·惊喜特派",
+                "index": 15,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 2
+            },
+            "SummitShaper": {
+                "stack": 3.0,
+                "shield_rate": 1.0
+            },
+            "FreedomSworn": {
+                "rate": 0.6
+            },
+            "IronSting": {
+                "stack": 2.0
+            },
+            "HarbingerOfDawn": {
+                "rate": 1.0
+            },
+            "DarkIronSword": {
+                "rate": 1.0
+            },
+            "XiphosMoonlight": {
+                "rate": 1.0
+            },
+            "KeyOfKhajNisut": {
+                "stack": 3.0
+            },
+            "WolfFang": {
+                "e_stack": 1.0,
+                "q_stack": 2.0
+            }
+        },
+        "artifact_config": {
+            "config_deepwood_memories": {
+                "rate": 0.7
+            }
+        }
+    },
+    "班尼特": {
+        "skills": [
+            {
+                "name": "点按伤害 - 热情过载",
+                "index": 10,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 美妙旅程",
+                "index": 16,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "持续治疗 - 美妙旅程",
+                "index": 17,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "MistsplitterReforged": {
+                "emblem_level": 1
+            },
+            "SapwoodBlade": {
+                "rate": 0.0
+            }
+        },
+        "artifact_config": {
+            "config_noblesse_oblige": {
+                "rate": 0.8
+            },
+            "config_instructor": {
+                "rate": 1.0
+            }
+        }
+    },
+    "诺艾尔": {
+        "skills": [
+            {
+                "name": "一段伤害 - 普通攻击·西风剑术·女仆",
+                "index": 0,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "二段伤害 - 普通攻击·西风剑术·女仆",
+                "index": 1,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "三段伤害 - 普通攻击·西风剑术·女仆",
+                "index": 2,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "四段伤害 - 普通攻击·西风剑术·女仆",
+                "index": 3,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "重击循环伤害 - 普通攻击·西风剑术·女仆",
+                "index": 4,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 护心铠",
+                "index": 9,
+                "damage_key": null,
+                "transformative_damage_key": null
+            },
+            {
+                "name": "治疗量 - 护心铠",
+                "index": 10,
+                "damage_key": null,
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "WolfsGravestone": {
+                "rate": 0.2
+            },
+            "TheUnforged": {
+                "shield_rate": 1.0,
+                "stack": 5.0
+            },
+            "Akuoumaru": {
+                "energy": 240
+            },
+            "Whiteblind": {
+                "stack": 4.0
+            },
+            "SerpentSpine": {
+                "stack": 5.0
+            },
+            "BeaconOfTheReedSea": {
+                "rate_atk": 0.0,
+                "rate_hp": 0.0
+            },
+            "TidalShadow": {
+                "rate": 1.0
+            },
+            "PortablePowerSaw": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_husk_of_opulent_dreams": {
+                "level": 4.0
+            },
+            "config_retracing_bolide": {
+                "rate": 1.0
+            }
+        }
+    },
+    "莱欧斯利": {
+        "skills": [
+            {
+                "name": "一段伤害 - 普通攻击·迅烈倾霜拳",
+                "index": 0,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "重击伤害 - 普通攻击·迅烈倾霜拳",
+                "index": 5,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "惩戒·凌跃拳 - 普通攻击·迅烈倾霜拳",
+                "index": 6,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 黑金狼噬",
+                "index": 10,
+                "damage_key": "melt",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": {
+            "talent2_stack": 5.0
+        },
+        "config_skill": {
+            "under_chilling_penalty": true
+        },
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 2.0
+            },
+            "MemoryOfDust": {
+                "stack": 5.0,
+                "shield_rate": 1.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.11,
+                "t2_rate": 0.11,
+                "t3_rate": 0.11
+            },
+            "SolarPearl": {
+                "rate1": 1.0,
+                "rate2": 0.6
+            },
+            "MappaMare": {
+                "stack": 2.0
+            },
+            "TulaytullahsRemembrance": {
+                "stack": 7.0
+            },
+            "CashflowSupervision": {
+                "stack": 3.0
+            },
+            "BalladOfTheBoundlessBlue": {
+                "stack": 3.0
+            },
+            "FlowingPurity": {
+                "rate1": 1.0,
+                "rate2": 0.8
+            }
+        },
+        "artifact_config": {
+            "config_marechaussee_hunter": {
+                "stack": 3.0
+            },
+            "config_blizzard_strayer": {
+                "critical_bonus": 35.0
+            }
+        }
     }
 }
