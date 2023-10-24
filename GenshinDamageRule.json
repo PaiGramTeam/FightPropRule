@@ -315,7 +315,11 @@
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
+        "config_weapon": {
+            "FreedomSworn": {
+                "rate": 1.0
+            }
+        },
         "artifact_config": null
     },
     "可莉": {
@@ -775,6 +779,46 @@
         "config": null,
         "config_skill": null,
         "config_weapon": null,
+        "artifact_config": null
+    },
+    "提纳里": {
+        "skills": [
+            {
+                "name": "一段蓄力瞄准射击 - 普通攻击·藏蕴破障",
+                "index": 5,
+                "damage_key": "normal"
+            },
+            {
+                "name": "花筥箭伤害 - 普通攻击·藏蕴破障",
+                "index": 6,
+                "damage_key": "normal"
+            },
+            {
+                "name": "藏蕴花矢伤害 - 普通攻击·藏蕴破障",
+                "index": 7,
+                "damage_key": "normal"
+            },
+            {
+                "name": "低空坠地冲击伤害 - 普通攻击·藏蕴破障",
+                "index": 10,
+                "damage_key": "normal"
+            },
+            {
+                "name": "高空坠地冲击伤害 - 普通攻击·藏蕴破障",
+                "index": 11,
+                "damage_key": "normal"
+            }
+        ],
+        "config": {
+            "talent1_ratio": 1.0,
+            "c2_ratio": 1.0
+        },
+        "config_skill": null,
+        "config_weapon": {
+            "AmosBow": {
+                "stack": 1.0
+            }
+        },
         "artifact_config": null
     }
 }
