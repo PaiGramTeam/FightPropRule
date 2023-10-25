@@ -1121,7 +1121,7 @@
             {
                 "name": "重击伤害-2 - 魔王武装·狂澜",
                 "index": 22,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
@@ -1386,13 +1386,13 @@
             {
                 "name": "技能伤害 - 眩惑光戏法",
                 "index": 12,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "引爆礼花伤害 - 大魔术·灵迹巡游",
                 "index": 14,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -1614,7 +1614,7 @@
             {
                 "name": "箭雨总伤害 - 箭雨",
                 "index": 12,
-                "damage_key": null,
+                "damage_key": "melt",
                 "transformative_damage_key": null
             }
         ],
@@ -1670,13 +1670,13 @@
             {
                 "name": "技能伤害 - 霜袭",
                 "index": 10,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 凛冽轮舞",
                 "index": 11,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -1707,7 +1707,7 @@
             {
                 "name": "越祓草轮治疗量 - 越祓雷草之轮",
                 "index": 11,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
@@ -1853,13 +1853,13 @@
                 "name": "技能伤害-4层 - 勠心拳",
                 "index": 16,
                 "damage_key": null,
-                "transformative_damage_key": null
+                "transformative_damage_key": "swirl_cryo"
             },
             {
                 "name": "不动流·真空弹伤害 - 聚风蹴",
                 "index": 17,
                 "damage_key": null,
-                "transformative_damage_key": null
+                "transformative_damage_key": "swirl_cryo"
             }
         ],
         "config": null,
@@ -1928,7 +1928,7 @@
             {
                 "name": "剑雨伤害 - 古华剑·裁雨留虹",
                 "index": 17,
-                "damage_key": null,
+                "damage_key": "vaporize",
                 "transformative_damage_key": null
             }
         ],
@@ -2055,45 +2055,27 @@
     "诺艾尔": {
         "skills": [
             {
-                "name": "一段伤害 - 普通攻击·西风剑术·女仆",
-                "index": 0,
-                "damage_key": null,
-                "transformative_damage_key": null
-            },
-            {
-                "name": "二段伤害 - 普通攻击·西风剑术·女仆",
-                "index": 1,
-                "damage_key": null,
-                "transformative_damage_key": null
-            },
-            {
-                "name": "三段伤害 - 普通攻击·西风剑术·女仆",
-                "index": 2,
-                "damage_key": null,
-                "transformative_damage_key": null
-            },
-            {
                 "name": "四段伤害 - 普通攻击·西风剑术·女仆",
                 "index": 3,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "重击循环伤害 - 普通攻击·西风剑术·女仆",
                 "index": 4,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 护心铠",
                 "index": 9,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "治疗量 - 护心铠",
                 "index": 10,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
