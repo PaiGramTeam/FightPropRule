@@ -106,6 +106,12 @@
                 "index": 20,
                 "damage_key": "normal",
                 "transformative_damage_key": null
+            },
+            {
+                "name": "超绽放反应伤害",
+                "index": 13,
+                "damage_key": null,
+                "transformative_damage_key": "burgeon"
             }
         ],
         "config": null,
@@ -398,6 +404,12 @@
                 "index": 12,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
+            },
+            {
+                "name": "超绽放反应伤害",
+                "index": 9,
+                "damage_key": null,
+                "transformative_damage_key": "burgeon"
             }
         ],
         "config": null,
@@ -524,10 +536,22 @@
                 "transformative_damage_key": null
             },
             {
+                "name": "单次扩散伤害",
+                "index": 18,
+                "damage_key": null,
+                "transformative_damage_key": "swirl_electro"
+            },
+            {
                 "name": "烈绽放剧变反应伤害",
-                "index": 22,
+                "index": 18,
                 "damage_key": null,
                 "transformative_damage_key": "hyper_bloom"
+            },
+            {
+                "name": "超绽放剧变反应伤害",
+                "index": 18,
+                "damage_key": null,
+                "transformative_damage_key": "burgeon"
             }
         ],
         "config": null,
@@ -1179,19 +1203,19 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害·近战 - 极恶技·尽灭闪",
+                "name": "技能伤害·近战 - 极恶技·尽灭闪 - 蒸发",
                 "index": 24,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害·远程 - 极恶技·尽灭闪",
+                "name": "技能伤害·远程 - 极恶技·尽灭闪 - 蒸发",
                 "index": 25,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "断流·爆伤害 - 极恶技·尽灭闪",
+                "name": "断流·爆伤害 - 极恶技·尽灭闪 - 蒸发",
                 "index": 26,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -1315,31 +1339,31 @@
     "提纳里": {
         "skills": [
             {
-                "name": "花筥箭伤害 - 普通攻击·藏蕴破障",
+                "name": "花筥箭伤害 - 普通攻击·藏蕴破障 - 蔓激化",
                 "index": 6,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "藏蕴花矢伤害 - 普通攻击·藏蕴破障",
+                "name": "藏蕴花矢伤害 - 普通攻击·藏蕴破障 - 蔓激化",
                 "index": 7,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 识果种雷",
+                "name": "技能伤害 - 识果种雷 - 蔓激化",
                 "index": 12,
-                "damage_key": "normal",
+                "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "缠藤箭伤害 - 造生缠藤箭",
+                "name": "缠藤箭伤害 - 造生缠藤箭 - 蔓激化",
                 "index": 13,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "次级缠藤箭伤害 - 造生缠藤箭",
+                "name": "次级缠藤箭伤害 - 造生缠藤箭 - 蔓激化",
                 "index": 14,
                 "damage_key": "spread",
                 "transformative_damage_key": null
@@ -1765,7 +1789,7 @@
     "久岐忍": {
         "skills": [
             {
-                "name": "技能伤害 - 越祓雷草之轮",
+                "name": "超绽放反应伤害",
                 "index": 10,
                 "damage_key": null,
                 "transformative_damage_key": "burgeon"
@@ -1777,13 +1801,13 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "越祓草轮伤害 - 越祓雷草之轮",
+                "name": "越祓草轮伤害 - 越祓雷草之轮 - 超激化",
                 "index": 12,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "单次伤害 - 御咏鸣神刈山祭",
+                "name": "单次伤害 - 御咏鸣神刈山祭 - 超激化",
                 "index": 13,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
@@ -1850,37 +1874,37 @@
     "妮露": {
         "skills": [
             {
-                "name": "剑舞步一段伤害 - 七域舞步",
+                "name": "剑舞步一段伤害 - 七域舞步 - 蒸发",
                 "index": 9,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "剑舞步二段伤害 - 七域舞步",
+                "name": "剑舞步二段伤害 - 七域舞步 - 蒸发",
                 "index": 11,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "水月伤害 - 七域舞步",
+                "name": "水月伤害 - 七域舞步 - 蒸发",
                 "index": 13,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "水轮伤害 - 七域舞步",
+                "name": "丰穰之核绽放伤害",
                 "index": 14,
                 "damage_key": null,
                 "transformative_damage_key": "bloom"
             },
             {
-                "name": "技能伤害 - 浮莲舞步·远梦聆泉",
+                "name": "技能伤害 - 浮莲舞步·远梦聆泉 - 蒸发",
                 "index": 15,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "永世流沔伤害 - 浮莲舞步·远梦聆泉",
+                "name": "永世流沔伤害 - 浮莲舞步·远梦聆泉 - 蒸发",
                 "index": 16,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -1918,14 +1942,14 @@
             {
                 "name": "技能伤害-4层 - 勠心拳",
                 "index": 16,
-                "damage_key": null,
-                "transformative_damage_key": "swirl_cryo"
+                "damage_key": "normal",
+                "transformative_damage_key": null
             },
             {
                 "name": "不动流·真空弹伤害 - 聚风蹴",
                 "index": 17,
-                "damage_key": null,
-                "transformative_damage_key": "swirl_cryo"
+                "damage_key": "normal",
+                "transformative_damage_key": null
             }
         ],
         "config": null,
@@ -1952,7 +1976,7 @@
     "砂糖": {
         "skills": [
             {
-                "name": "技能伤害 - 风灵作成·陆叁零捌",
+                "name": "单次扩散伤害",
                 "index": 8,
                 "damage_key": null,
                 "transformative_damage_key": "swirl_electro"
@@ -2287,19 +2311,19 @@
     "烟绯": {
         "skills": [
             {
-                "name": "重击-4层伤害 - 普通攻击·火漆制印",
+                "name": "重击-4层伤害 - 普通攻击·火漆制印 - 蒸发",
                 "index": 7,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 丹书立约",
+                "name": "技能伤害 - 丹书立约 - 蒸发",
                 "index": 12,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 凭此结契",
+                "name": "技能伤害 - 凭此结契 - 蒸发",
                 "index": 13,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -2307,8 +2331,69 @@
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
-        "artifact_config": null
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 1.0
+            },
+            "MemoryOfDust": {
+                "stack": 5.0,
+                "shield_rate": 1.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.11,
+                "t2_rate": 0.11,
+                "t3_rate": 0.11
+            },
+            "SolarPearl": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "MappaMare": {
+                "stack": 2.0
+            },
+            "OathswornEye": {
+                "rate": 1.0
+            },
+            "MagicGuide": {
+                "rate": 1.0
+            },
+            "FruitOfFulfillment": {
+                "stack": 5.0
+            },
+            "WanderingEvenstar": {
+                "rate": 1.0
+            },
+            "AThousandFloatingDreams": {
+                "same_count": 2,
+                "diff_count": 2
+            },
+            "FlowingPurity": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "BalladOfTheBoundlessBlue": {
+                "stack": 3.0
+            },
+            "CashflowSupervision": {
+                "stack": 1.0
+            },
+            "TomeOfTheEternalFlow": {
+                "stack": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_crimson_witch_of_flames": {
+                "level": 1.0
+            },
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 0.8
+            },
+            "config_shimenawas_reminiscence": {
+                "rate": 1.0
+            }
+        }
     },
     "空-风": {
         "skills": [
@@ -2385,6 +2470,111 @@
         "config": null,
         "config_skill": null,
         "config_weapon": null,
+        "artifact_config": null
+    },
+    "丽莎": {
+        "skills": [
+            {
+                "name": "三层引雷长按伤害 - 苍雷 - 超激化",
+                "index": 12,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "雷光放电伤害 - 蔷薇的雷光 - 超激化",
+                "index": 13,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "超绽放反应伤害",
+                "index": 8,
+                "damage_key": null,
+                "transformative_damage_key": "burgeon"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "LostPrayerToTheSacredWinds": {
+                "stack": 1.0
+            },
+            "TheWidsith": {
+                "t1_rate": 0.15,
+                "t2_rate": 0.15,
+                "t3_rate": 0.15
+            },
+            "SolarPearl": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "MappaMare": {
+                "stack": 2.0
+            },
+            "KagurasVerity": {
+                "stack": 3.0,
+                "full_rate": 1.0
+            },
+            "OathswornEye": {
+                "rate": 1.0
+            },
+            "MagicGuide": {
+                "rate": 1.0
+            },
+            "FruitOfFulfillment": {
+                "stack": 5.0
+            },
+            "WanderingEvenstar": {
+                "rate": 1.0
+            },
+            "AThousandFloatingDreams": {
+                "same_count": 2,
+                "diff_count": 2
+            },
+            "FlowingPurity": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_gilded_dreams": {
+                "same_count": 2,
+                "diff_count": 2,
+                "rate": 1.0
+            }
+        }
+    },
+    "温迪": {
+        "skills": [
+            {
+                "name": "单次扩散伤害",
+                "index": 15,
+                "damage_key": null,
+                "transformative_damage_key": "swirl_electro"
+            },
+            {
+                "name": "点按伤害 - 高天之歌",
+                "index": 15,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "持续伤害 - 风神之诗",
+                "index": 17,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "ElegyOfTheEnd": {
+                "rate": 0.5
+            },
+            "AquaSimulacra": {
+                "is_enemy_around": true
+            }
+        },
         "artifact_config": null
     }
 }
