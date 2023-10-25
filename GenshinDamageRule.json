@@ -84,7 +84,7 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "神变•恶曜开眼协-同攻击伤害",
+                "name": "神变•恶曜开眼-协同攻击伤害",
                 "index": 11,
                 "damage_key": "normal",
                 "transformative_damage_key": null
@@ -296,13 +296,25 @@
     "优菈": {
         "skills": [
             {
-                "name": "技能伤害 - 凝浪之光剑",
-                "index": 16,
+                "name": "点按伤害 - 冰潮的涡旋",
+                "index": 12,
                 "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
-                "name": "光降之剑 - 凝浪之光剑",
+                "name": "长按伤害 - 冰潮的涡旋",
+                "index": 13,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 残缺光降之剑",
+                "index": 15,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "光降之剑基础伤害 - 凝浪之光剑",
                 "index": 17,
                 "damage_key": "normal",
                 "transformative_damage_key": null
@@ -1121,6 +1133,12 @@
                 "index": 4,
                 "damage_key": "normal",
                 "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 潮水啊，我已归来",
+                "index": 8,
+                "damage_key": "normal",
+                "transformative_damage_key": null
             }
         ],
         "config": {
@@ -1270,6 +1288,12 @@
     },
     "琴": {
         "skills": [
+            {
+                "name": "技能伤害 - 风压剑",
+                "index": 9,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
             {
                 "name": "领域发动治疗量 - 蒲公英之风",
                 "index": 12,
@@ -1432,6 +1456,12 @@
             {
                 "name": "高空坠地冲击伤害 - 普通攻击·西风剑术·白",
                 "index": 9,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "绽放伤害 - 刹那之花",
+                "index": 11,
                 "damage_key": "normal",
                 "transformative_damage_key": null
             }
