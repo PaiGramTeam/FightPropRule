@@ -2029,7 +2029,7 @@
             {
                 "name": "持续治疗 - 美妙旅程",
                 "index": 17,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
