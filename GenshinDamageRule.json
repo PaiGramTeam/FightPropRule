@@ -2243,19 +2243,19 @@
             {
                 "name": "五段伤害 - 普通攻击·异邦铁风",
                 "index": 4,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "最大切割伤害 - 风涡剑",
                 "index": 11,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "龙卷风伤害 - 风息激荡",
                 "index": 14,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -2269,19 +2269,19 @@
             {
                 "name": "荒泷逆袈裟终结伤害 - 普通攻击•喧哗屋传说",
                 "index": 5,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "左一文字斩伤害 - 普通攻击•喧哗屋传说",
                 "index": 6,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
                 "name": "技能伤害 - 魔杀绝技•赤牛发破！",
                 "index": 10,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -2306,7 +2306,7 @@
             {
                 "name": "持续治疗量 - 卡萨扎莱宫的无微不至",
                 "index": 12,
-                "damage_key": null,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
