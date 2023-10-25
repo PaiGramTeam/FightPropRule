@@ -46,19 +46,19 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "萦络纵命索-技能伤害",
+                "name": "技能伤害 - 萦络纵命索",
                 "index": 11,
                 "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
-                "name": "渊图玲珑骰-技能伤害",
-                "index": 12,
-                "damage_key": "normal",
+                "name": "技能伤害 - 萦络纵命索 - 蒸发",
+                "index": 11,
+                "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "渊图玲珑骰-玄掷玲珑伤害",
+                "name": "玄掷玲珑伤害 - 渊图玲珑骰",
                 "index": 13,
                 "damage_key": "normal",
                 "transformative_damage_key": null
@@ -129,19 +129,19 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "重击激化伤害 - 普通攻击·行相",
+                "name": "重击伤害 - 普通攻击·行相 - 蔓激化",
                 "index": 4,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "点按伤害 - 所闻遍计",
+                "name": "点按伤害 - 所闻遍计 - 蔓激化",
                 "index": 8,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "长按伤害 - 所闻遍计",
+                "name": "长按伤害 - 所闻遍计 - 蔓激化",
                 "index": 9,
                 "damage_key": "spread",
                 "transformative_damage_key": null
@@ -153,7 +153,7 @@
                 "transformative_damage_key": null
             },
             {
-                "name": "灭净三业激化伤害 - 所闻遍计",
+                "name": "灭净三业伤害 - 所闻遍计 - 蔓激化",
                 "index": 10,
                 "damage_key": "spread",
                 "transformative_damage_key": null
@@ -215,31 +215,31 @@
     "宵宫": {
         "skills": [
             {
-                "name": "一段伤害/2 - 普通攻击·烟火打扬",
+                "name": "一段伤害/2 - 普通攻击·烟火打扬 - 蒸发",
                 "index": 0,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "二段伤害 - 普通攻击·烟火打扬",
+                "name": "二段伤害 - 普通攻击·烟火打扬 - 蒸发",
                 "index": 1,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "三段伤害 - 普通攻击·烟火打扬",
+                "name": "三段伤害 - 普通攻击·烟火打扬 - 蒸发",
                 "index": 2,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "四段伤害/2 - 普通攻击·烟火打扬",
+                "name": "四段伤害/2 - 普通攻击·烟火打扬 - 蒸发",
                 "index": 3,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "五段伤害 - 普通攻击·烟火打扬",
+                "name": "五段伤害 - 普通攻击·烟火打扬 - 蒸发",
                 "index": 4,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -376,25 +376,25 @@
     "八重神子": {
         "skills": [
             {
-                "name": "杀生樱伤害·叁阶 - 野干役咒·杀生樱",
+                "name": "杀生樱伤害·叁阶 - 野干役咒·杀生樱 - 超激化",
                 "index": 9,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "杀生樱伤害·肆阶 - 野干役咒·杀生樱",
+                "name": "杀生樱伤害·肆阶 - 野干役咒·杀生樱 - 超激化",
                 "index": 10,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 大密法·天狐显真",
+                "name": "技能伤害 - 大密法·天狐显真 - 超激化",
                 "index": 11,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "天狐霆雷伤害 - 大密法·天狐显真",
+                "name": "天狐霆雷伤害 - 大密法·天狐显真 - 超激化",
                 "index": 12,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
@@ -442,25 +442,25 @@
     "刻晴": {
         "skills": [
             {
-                "name": "雷楔伤害 - 星斗归位",
+                "name": "雷楔伤害 - 星斗归位 - 超激化",
                 "index": 11,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "斩击伤害 - 星斗归位",
+                "name": "斩击伤害 - 星斗归位 - 超激化",
                 "index": 12,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "连斩伤害/8 - 天街巡游",
+                "name": "连斩伤害/8 - 天街巡游 - 超激化",
                 "index": 16,
                 "damage_key": "normal",
                 "transformative_damage_key": null
             },
             {
-                "name": "最后一击伤害 - 天街巡游",
+                "name": "最后一击伤害 - 天街巡游 - 超激化",
                 "index": 18,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
@@ -586,27 +586,51 @@
     "甘雨": {
         "skills": [
             {
-                "name": "霜华矢命中伤害 - 普通攻击·流天射术",
+                "name": "霜华矢命中伤害 - 普通攻击·流天射术 - 融化",
                 "index": 8,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "霜华矢·霜华绽发伤害 - 普通攻击·流天射术",
+                "name": "霜华矢·霜华绽发伤害 - 普通攻击·流天射术 - 融化",
                 "index": 9,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 山泽麟迹",
+                "name": "技能伤害 - 山泽麟迹 - 融化",
                 "index": 13,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "冰棱伤害 - 降众天华",
+                "name": "冰棱伤害 - 降众天华 - 融化",
                 "index": 14,
                 "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "霜华矢命中伤害 - 普通攻击·流天射术",
+                "index": 8,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "霜华矢·霜华绽发伤害 - 普通攻击·流天射术",
+                "index": 9,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 山泽麟迹",
+                "index": 13,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "冰棱伤害 - 降众天华",
+                "index": 14,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -757,27 +781,51 @@
     "迪卢克": {
         "skills": [
             {
-                "name": "一段伤害 - 普通攻击·淬炼之剑",
+                "name": "一段伤害 - 普通攻击·淬炼之剑 - 融化",
                 "index": 0,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "低空坠地冲击伤害 - 普通攻击·淬炼之剑",
+                "name": "低空坠地冲击伤害 - 普通攻击·淬炼之剑 - 融化",
                 "index": 7,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "三段伤害 - 逆焰之刃",
+                "name": "三段伤害 - 逆焰之刃 - 融化",
                 "index": 11,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "斩击伤害 - 黎明",
+                "name": "斩击伤害 - 黎明 - 融化",
                 "index": 12,
                 "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "一段伤害 - 普通攻击·淬炼之剑 - 蒸发",
+                "index": 0,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "低空坠地冲击伤害 - 普通攻击·淬炼之剑 - 蒸发",
+                "index": 7,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "三段伤害 - 逆焰之刃 - 蒸发",
+                "index": 11,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "斩击伤害 - 黎明 - 蒸发",
+                "index": 12,
+                "damage_key": "vaporize",
                 "transformative_damage_key": null
             }
         ],
@@ -818,13 +866,13 @@
     "香菱": {
         "skills": [
             {
-                "name": "喷火伤害 - 锅巴出击",
+                "name": "喷火伤害 - 锅巴出击 - 蒸发",
                 "index": 12,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "旋火轮伤害 - 旋火轮",
+                "name": "旋火轮伤害 - 旋火轮 - 蒸发",
                 "index": 16,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -1071,13 +1119,13 @@
     "菲谢尔": {
         "skills": [
             {
-                "name": "奥兹攻击伤害 - 夜巡影翼",
+                "name": "奥兹攻击伤害 - 夜巡影翼 - 超激化",
                 "index": 10,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
             },
             {
-                "name": "落雷伤害 - 至夜幻现",
+                "name": "落雷伤害 - 至夜幻现 - 超激化",
                 "index": 12,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
@@ -1467,15 +1515,27 @@
     "艾尔海森": {
         "skills": [
             {
-                "name": "3枚光幕攻击伤害 - 共相·理式摹写",
+                "name": "3枚光幕攻击伤害 - 共相·理式摹写 - 蔓激化",
                 "index": 14,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "单次伤害 - 殊境·显象缚结",
+                "name": "单次伤害 - 殊境·显象缚结 - 蔓激化",
                 "index": 15,
                 "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "3枚光幕攻击伤害 - 共相·理式摹写",
+                "index": 14,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "单次伤害 - 殊境·显象缚结",
+                "index": 15,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
@@ -1600,21 +1660,27 @@
     "安柏": {
         "skills": [
             {
-                "name": "满蓄力瞄准射击 - 普通攻击·神射手",
+                "name": "满蓄力瞄准射击 - 普通攻击·神射手 - 融化",
                 "index": 6,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "爆炸伤害 - 爆弹玩偶",
+                "name": "爆炸伤害 - 爆弹玩偶 - 融化",
                 "index": 10,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "箭雨总伤害 - 箭雨",
-                "index": 12,
-                "damage_key": "melt",
+                "name": "满蓄力瞄准射击 - 普通攻击·神射手 - 蒸发",
+                "index": 6,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "爆炸伤害 - 爆弹玩偶 - 蒸发",
+                "index": 10,
+                "damage_key": "vaporize",
                 "transformative_damage_key": null
             }
         ],
@@ -1914,13 +1980,13 @@
     "行秋": {
         "skills": [
             {
-                "name": "技能伤害-1 - 古华剑·画雨笼山",
+                "name": "技能伤害-1 - 古华剑·画雨笼山 - 蒸发",
                 "index": 15,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害-2 - 古华剑·画雨笼山",
+                "name": "技能伤害-2 - 古华剑·画雨笼山 - 蒸发",
                 "index": 16,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -1949,25 +2015,25 @@
     "绮良良": {
         "skills": [
             {
-                "name": "甩尾飞踢伤害 - 呜喵町飞足",
+                "name": "甩尾飞踢伤害 - 呜喵町飞足 - 蔓激化",
                 "index": 11,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "翻正爪击伤害 - 呜喵町飞足",
+                "name": "翻正爪击伤害 - 呜喵町飞足 - 蔓激化",
                 "index": 13,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 秘法·惊喜特派",
+                "name": "技能伤害 - 秘法·惊喜特派 - 蔓激化",
                 "index": 14,
                 "damage_key": "spread",
                 "transformative_damage_key": null
             },
             {
-                "name": "猫草豆蔻爆炸伤害 - 秘法·惊喜特派",
+                "name": "猫草豆蔻爆炸伤害 - 秘法·惊喜特派 - 蔓激化",
                 "index": 15,
                 "damage_key": "spread",
                 "transformative_damage_key": null
@@ -2015,13 +2081,13 @@
     "班尼特": {
         "skills": [
             {
-                "name": "点按伤害 - 热情过载",
+                "name": "点按伤害 - 热情过载 - 蒸发",
                 "index": 10,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 美妙旅程",
+                "name": "技能伤害 - 美妙旅程 - 蒸发",
                 "index": 16,
                 "damage_key": "vaporize",
                 "transformative_damage_key": null
@@ -2121,27 +2187,51 @@
     "莱欧斯利": {
         "skills": [
             {
-                "name": "一段伤害 - 普通攻击·迅烈倾霜拳",
+                "name": "一段伤害 - 普通攻击·迅烈倾霜拳 - 融化",
                 "index": 0,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "重击伤害 - 普通攻击·迅烈倾霜拳",
+                "name": "重击伤害 - 普通攻击·迅烈倾霜拳 - 融化",
                 "index": 5,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "惩戒·凌跃拳 - 普通攻击·迅烈倾霜拳",
+                "name": "惩戒·凌跃拳 - 普通攻击·迅烈倾霜拳 - 融化",
                 "index": 6,
                 "damage_key": "melt",
                 "transformative_damage_key": null
             },
             {
-                "name": "技能伤害 - 黑金狼噬",
+                "name": "技能伤害 - 黑金狼噬 - 融化",
                 "index": 10,
                 "damage_key": "melt",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "一段伤害 - 普通攻击·迅烈倾霜拳",
+                "index": 0,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "重击伤害 - 普通攻击·迅烈倾霜拳",
+                "index": 5,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "惩戒·凌跃拳 - 普通攻击·迅烈倾霜拳",
+                "index": 6,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 黑金狼噬",
+                "index": 10,
+                "damage_key": "normal",
                 "transformative_damage_key": null
             }
         ],
