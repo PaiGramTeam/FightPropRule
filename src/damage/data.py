@@ -3,6 +3,7 @@ from typing import Dict, Any
 
 from .character import character
 from .models import CharacterDamage, CharacterSkill, CharacterConfig, WeaponConfig
+from .skill_data import SkillData
 
 
 class Data:
@@ -87,35 +88,6 @@ class Data:
         if data_.artifact_config is not None and data_.artifact_config:
             return
         del self.file_data[character_name]
-
-    def get_skill_value(self, character_name: str, skill: CharacterSkill) -> bool:
-        if not self.file_data.get(character_name):
-            return False
-        skill_id = skill.index
-        for i in self.file_data[character_name].skills:
-            if i.index == skill_id:
-                return True
-        return False
-
-    def set_skill_value(self, character_name: str, skill: CharacterSkill, enable: bool):
-        self.first_init(character_name)
-        in_data = None
-        for i in self.file_data[character_name].skills:
-            if i.index == skill.index:
-                in_data = i
-                break
-        if enable:
-            if not in_data:
-                self.file_data[character_name].skills.append(skill.to_data())
-            else:
-                in_data.name = skill.custom_name or skill.show_name
-                in_data.damage_key = skill.damage_key
-                in_data.transformative_damage_key = skill.transformative_damage_key
-        else:
-            if in_data:
-                self.file_data[character_name].skills.remove(in_data)
-        self.file_data[character_name].skills.sort(key=lambda x: x.index)
-        self.last_close(character_name)
 
     def get_character_config_value(
         self, character_name: str, config_: CharacterConfig
@@ -245,3 +217,4 @@ class Data:
 
 
 data = Data()
+skill_data = SkillData(data.file_data)
