@@ -68,6 +68,13 @@ class Data:
                     if not v:
                         del data_.artifact_config[k]
 
+        def last_close_skills():
+            if data_.skills:
+                for v in data_.skills.copy():
+                    if not v.damage_key and not v.transformative_damage_key:
+                        data_.skills.remove(v)
+
+        last_close_skills()
         last_close_weapon_or_artifact()
         if len(data_.skills) != 0:
             return

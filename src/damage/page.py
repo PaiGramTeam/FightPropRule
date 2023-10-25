@@ -276,10 +276,6 @@ def edit_damage_view(page: "Page"):
         skill: CharacterSkill = checkbox.data
         page.overlay.clear()
 
-        def close_bs(_: ft.ControlEvent = None):
-            bs.open = False
-            bs.update()
-
         def skill_status_change(e_: ft.ControlEvent = None):
             value = e_.data == "true"
             data.set_skill_value(character.current_name, skill, value)
@@ -321,9 +317,7 @@ def edit_damage_view(page: "Page"):
                 ft.dropdown.Option(key=v, text=k)
                 for k, v in CharacterDamageSkillDamageKey.normal.data_map.items()
             ],
-            value=skill.damage_key.value
-            if skill.damage_key
-            else CharacterDamageSkillDamageKey.normal.value,
+            value=skill.damage_key.value if skill.damage_key else "",
             on_change=skill_key_change,
             visible=not bool(skill.transformative_damage_key),
         )
@@ -335,7 +329,7 @@ def edit_damage_view(page: "Page"):
             ],
             value=skill.transformative_damage_key.value
             if skill.transformative_damage_key
-            else CharacterDamageSkillTransformativeDamageKey.swirl_cryo.value,
+            else "",
             on_change=skill_transformative_key_change,
             visible=bool(skill.transformative_damage_key),
         )
@@ -362,7 +356,6 @@ def edit_damage_view(page: "Page"):
                         ),
                         normal_skill_ft,
                         transformative_skill_ft,
-                        ft.ElevatedButton("关闭", on_click=close_bs),
                     ],
                     tight=True,
                 ),
@@ -399,10 +392,6 @@ def edit_damage_view(page: "Page"):
         model: "WeaponModel" = checkbox.data
         page.overlay.clear()
 
-        def close_bs(_: ft.ControlEvent = None):
-            bs.open = False
-            bs.update()
-
         def on_config_value_change(e_: ft.ControlEvent = None):
             set_config_value(ch_name, e_.control.data, e_.data)
 
@@ -427,7 +416,6 @@ def edit_damage_view(page: "Page"):
                 content=ft.ElevatedButton("恢复到默认值", on_click=reset_all_config_value),
             )
         )
-        controls.append(ft.ElevatedButton("关闭", on_click=close_bs))
 
         bs = ft.BottomSheet(
             ft.Container(
