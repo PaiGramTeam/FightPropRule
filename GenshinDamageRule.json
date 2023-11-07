@@ -1844,7 +1844,8 @@
             }
         ],
         "config": {
-            "hp_le_50": true
+            "hp_le_50": true,
+            "use_c6": false
         },
         "config_skill": null,
         "config_weapon": {
