@@ -2607,5 +2607,54 @@
             }
         },
         "artifact_config": null
+    },
+    "芙宁娜": {
+        "skills": [
+            {
+                "name": "荒性泡沫伤害 - 孤心沙龙",
+                "index": 9,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "乌瑟勋爵伤害 - 孤心沙龙",
+                "index": 10,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "海薇玛夫人伤害 - 孤心沙龙",
+                "index": 11,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "谢贝蕾妲小姐伤害 - 孤心沙龙",
+                "index": 12,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "众水的歌者治疗量 - 孤心沙龙",
+                "index": 13,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 万众狂欢",
+                "index": 14,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "SplendorOfTranquilWaters": {
+                "stack1": 2.0,
+                "stack2": 2.0
+            }
+        },
+        "artifact_config": {}
     }
 }
