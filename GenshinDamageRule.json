@@ -2647,8 +2647,14 @@
                 "transformative_damage_key": null
             }
         ],
-        "config": null,
-        "config_skill": null,
+        "config": {
+            "c2_overflow": 0.0
+        },
+        "config_skill": {
+            "hp_above50_count": 3,
+            "c6_after_e": true,
+            "c6_pneuma": true
+        },
         "config_weapon": {
             "SplendorOfTranquilWaters": {
                 "stack1": 2.0,
