@@ -1956,7 +1956,8 @@
                 "rate": 1.0
             },
             "KeyOfKhajNisut": {
-                "stack": 3.0
+                "stack": 3.0,
+                "rate": 0.5
             },
             "WolfFang": {
                 "e_stack": 4.0,
