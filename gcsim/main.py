@@ -63,10 +63,11 @@ async def main():
             await modify_script(path)
     allow = []
     for path in temp_path.iterdir():
-        if await run_gcsim(temp_path / path.name):
-            allow.append(path)
+        if await run_gcsim(path):
+            allow.append(path.name)
     data = {}
-    for path in allow:
+    for filename in allow:
+        path = scripts_path / filename
         async with aiofiles.open(path, "r", encoding="utf-8") as f:
             data[path.stem] = await f.read()
     async with aiofiles.open(data_path, "w", encoding="utf-8") as f:
