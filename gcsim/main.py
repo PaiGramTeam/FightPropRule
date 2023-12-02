@@ -6,6 +6,7 @@ from pathlib import Path
 import aiofiles
 import re
 import gcsim_pypi
+import sys
 
 data_path = Path("gcsim.json")
 gcsim_path = Path("gcsim")
@@ -41,9 +42,14 @@ async def run_gcsim(path: Path) -> bool:
         _, stderr = await process.communicate()
         err = stderr.decode()
         if err:
-            print(f"{path.name} 解析失败 {err}")
+            text = f"{path.name} 解析失败 \n\n{err}"
+            if sys.argv[-1] == "pr":
+                raise ValueError(text)
+            print(text)
             return False
         return True
+    except ValueError as e:
+        raise e
     except Exception:
         return False
 

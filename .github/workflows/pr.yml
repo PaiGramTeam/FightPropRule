@@ -1,0 +1,31 @@
+name: PR Check for gcsim scripts
+
+on:
+  pull_request:
+    paths:
+      - 'gcsim/scripts/**'
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+jobs:
+  pr-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install -r gcsim/requirements.txt
+
+      - name: Check GCSIM scripts
+        run: |
+          python gcsim/main.py pr
