@@ -24,14 +24,14 @@ alhaitham add stats hp=4780 atk=311 em=187 dendro%=0.466 cd=0.622 ; #main
 alhaitham add stats atk%=0.3 er=0.3 em=120 cr=0.331 cd=0.528;
 							
 # ----  Default Enemy
-options swap_delay=10 debug=true iteration=1000;
-target lvl=100 resist=0.1 hp=80000000 pos=3.1,0 radius=2;
+options swap_delay=12 iteration=500;
+target lvl=100 resist=0.1 hp=10000000 pos=3.1,0 radius=2;
 energy every interval=480,720 amount=1;
 
 active yae;
 yae skill:3;
  
-while 1 {
+for let i = 0; i < 8; i = i + 1 {
   zhongli skill[hold=1], dash;
   nahida skill;
   if .nahida.burst.ready { nahida burst; } else { nahida attack, charge; }
@@ -42,10 +42,17 @@ while 1 {
     } else {
       yae attack, skill, attack;
     }
-    alhaitham attack:3, dash, attack:3, skill, attack:3, dash, attack:3, charge, attack:3, dash, attack:3, dash, attack:3, dash, attack:3, dash, attack:3;
+    alhaitham attack:3, dash, attack:3, # 3 mirrors
+      skill, attack:3, dash, attack:3, # 3 mirrors
+      charge, attack:3, dash, attack:3, dash, # 3 mirrors
+      attack:3, dash, attack:3, dash, # 2 mirrors
+      attack:3; # 1 mirror
   } else {
     while .yae.skill.ready { yae skill; }
-    alhaitham skill[hold=1], low_plunge[short=1], attack:3, dash, attack:3, dash, attack:3, dash, attack:3, dash, attack:3, dash, attack:3;
+    alhaitham skill[hold=1], low_plunge[short=1], 
+      attack:3, dash, attack:3, dash, # 3 mirrors
+      attack:3, dash, attack:3, dash, # 2 mirrors
+      attack:3, dash, attack:3; # 1 mirror
   }
   while .yae.skill.ready { yae skill; }
 }
