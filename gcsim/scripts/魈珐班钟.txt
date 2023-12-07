@@ -30,8 +30,10 @@ for let i=0; i<4; i=i+1 {
 
   zhongli skill[hold=1], dash;
   if i > 0 {
-    while !.zhongli.mods.favonius-cd {
-      zhongli attack;
+    if .zhongli.weapon == .keys.weapon.favoniuslance {
+      while !.zhongli.mods.favonius-cd {
+        zhongli attack;
+      }
     }
   }
   if !.bennett.burst.ready {bennett attack, skill;}

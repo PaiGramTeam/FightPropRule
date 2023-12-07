@@ -34,9 +34,11 @@ for let i=0; i<4; i=i+1 {
 
 
   zhongli attack, skill[hold=1], dash;
-  while !.zhongli.mods.favonius-cd {
-    zhongli attack;
-  }
+  if .zhongli.weapon == .keys.weapon.favoniuslance {
+    while !.zhongli.mods.favonius-cd {
+      zhongli attack;
+    }
+	}
   bennett skill, burst;
   sucrose skill, dash;
   xiao skill:2, burst;

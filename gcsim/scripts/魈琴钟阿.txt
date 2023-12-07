@@ -35,9 +35,11 @@ for let i=0; i<4; i=i+1 {
 
   albedo skill, attack;  
   zhongli attack, skill[hold=1], dash;
-  while( !.zhongli.mods.favonius-cd && !.xiao.burst.ready) {
-    zhongli attack;
-  } #proc fav
+  if .zhongli.weapon == .keys.weapon.favoniuslance {
+    while( !.zhongli.mods.favonius-cd && !.xiao.burst.ready) {
+      zhongli attack;
+    } #proc fav
+	}
   jean burst, skill;
   xiao skill, burst;
   for let h = 0; h < 11 ; h=h+1 {

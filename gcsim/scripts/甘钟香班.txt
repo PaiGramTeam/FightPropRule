@@ -32,8 +32,10 @@ for let i=0; i<4; i=i+1 {
 	  ganyu burst;
 	}
 	zhongli attack, skill[hold=1], dash;
-	while (.zhongli.mods.favonius-cd==0) {
-	  zhongli attack;
+	if .zhongli.weapon == .keys.weapon.favoniuslance {
+		while !.zhongli.mods.favonius-cd {
+			zhongli attack;
+		}
 	}
 	bennett burst,skill;
 	xiangling burst, skill;
