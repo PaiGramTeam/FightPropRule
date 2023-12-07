@@ -1,50 +1,134 @@
+# 这个轴会使用固定流程打万叶 q 染火风并双扩散：
+# 行 qa 班 qaea 万 qe 香 qe 行 ee 班 e 香 aaa 万 e 行 aaa 班 e
+# 若万叶无大招则转用另一种双扩散手法：
+# 行 qa 班 qaea 闪避万长 e 香 qe 行 ee 班 e 香 aaa 万 e 行 aaa 班 e
+# 最低推荐充能： 万叶：180%，香菱：230%, 班尼特：180%
+# 行秋：祭礼剑或西风剑，从精 5 到 1 从 170% 上升到 200%，
+# 其他单手剑 210%。非 6 命行秋在以上基础再加 30% 充能。
+# 队里至少 1 人携带西风剑，无西风剑则每人往上加 20% 充能，反之每多 1 西风减 20%。
+# 若不满足充能条件则模拟循环会花费大量时间切人打球导致结果骤降。
+
 kazuha char lvl=90/90 cons=0 talent=9,9,9;
-kazuha add weapon="favoniussword" refine=3 lvl=90/90;
+kazuha add weapon="favoniussword" refine=5 lvl=90/90;
+#kazuha add weapon="ironsting" refine=5 lvl=90/90;
 kazuha add set="viridescentvenerer" count=5;
-kazuha add stats hp=4780 atk=311 em=561 ; #main
-kazuha add stats def%=0.1 hp%=0.1 atk%=0.1 er=0.4 em=120 cr=0.198 cd=0.264;
+kazuha add stats hp=4780 atk=311 em=561 ;
+kazuha add stats def%=0.2 hp%=0.2 atk%=0.1 er=0.3 em=120 cr=0.198 cd=0.264;
 
 xiangling char lvl=90/90 cons=6 talent=9,9,9;
 xiangling add weapon="thecatch" refine=5 lvl=90/90;
 xiangling add set="emblemofseveredfate" count=5;
-xiangling add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311 ; #main
-xiangling add stats def%=0.2 hp%=0.2 atk%=0.1 er=0.4 em=80 cr=0.231 cd=0.726;
+xiangling add stats hp=4780 atk=311 er=0.518 pyro%=0.466 cr=0.311 ;
+xiangling add stats def%=0.2 hp%=0.2 atk%=0.2 er=0.1 em=120 cr=0.231 cd=0.726;
 
 xingqiu char lvl=90/90 cons=6 talent=9,9,9;
-xingqiu add weapon="favoniussword" refine=3 lvl=90/90;
+#xingqiu add weapon="favoniussword" refine=5 lvl=90/90;
+xingqiu add weapon="sacrificialsword" refine=5 lvl=90/90;
 xingqiu add set="no" count=5;
 xingqiu add stats hp=4780 atk=311 atk%=0.466 hydro%=0.466 cr=0.311 ; #main
-xingqiu add stats def%=0.2 hp%=0.2 atk%=0.2 er=0.3 em=80 cr=0.231 cd=0.726;
+xingqiu add stats def%=0.2 hp%=0.2 atk%=0.2 er=0.1 em=120 cr=0.231 cd=0.726;
 
 bennett char lvl=90/90 cons=6 talent=9,9,9; 
 bennett add weapon="thealleyflash" refine=1 lvl=90/90;
 bennett add set="instructor" count=4;
-bennett add stats hp=3571 atk=232 er=0.518 cr=0.311 pyro%=0.466 ; #main
-bennett add stats def%=0.2 hp%=0.4 atk%=0.2 er=0.4 em=40 cr=0.132 cd=0.264;
+bennett add stats hp=3571 atk=232 er=0.518 hp%=0.466 heal=0.359;
+bennett add stats def%=0.2 hp%=0.4 atk%=0.2 er=0.3 em=40 cr=0.132 cd=0.264;
 
-target lvl=100 resist=0.1 hp=10000000 radius=2 pos=0,2.4;
-options swap_delay=12 iteration=500;
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+options swap_delay=12 debug=true duration=270 iteration=500;
 energy every interval=480,720 amount=1;
 
-active xingqiu;
-for let i = 0; i < 8; i = i + 1 {
-  xingqiu burst, attack;
-  kazuha burst, attack;
-  bennett burst, skill;
-  kazuha skill[hold=1], high_plunge;  
-  xiangling attack, burst, skill, dash, attack;
-  xingqiu attack, skill, dash, attack:3; # attack:3 to get hydro orbs from his own
-  bennett attack, skill;
-  xiangling attack:3;
-  kazuha skill, high_plunge;
-  xingqiu attack:3;
-  bennett attack; while .bennett.skill.cd { bennett attack; } bennett skill;
-  xiangling attack:3;
+let is_sacsword = 0;
+let sacsword_proc = 0;
+let kaz_q_pyro = 0;
 
-  #recharge phase
-  while .xiangling.energy < 70 {
-    bennett attack; while .bennett.skill.cd { bennett attack; } bennett skill;
-    xiangling attack:3;
-    if .kazuha.skill.ready && !.kazuha.burst.ready { kazuha skill, high_plunge, attack; }
+fn benn_skill() {
+  bennett attack; while .bennett.skill.cd { bennett attack; } bennett skill;
+}
+
+fn benn_funnel() {
+  if !.bennett.onfield {
+    benn_skill();
+  }
+  if .xiangling.energy < .xiangling.energymax { 
+    xiangling attack:3; 
+  } else if .xingqiu.energy < .xingqiu.energymax { 
+    xingqiu attack:3; 
+  } else {
+    bennett attack:2; 
+  }
+}
+
+active xingqiu;
+
+for let i = 0; i < 24; i = i + 1 {
+  if !.xingqiu.onfield {
+    # one more attack for swap cd
+    xingqiu burst, attack:2;  
+  } else {
+    xingqiu burst, attack;    
+  }
+  
+  if .kazuha.burst.ready { 
+    # 万叶大招水风双扩流程
+    # 对于单体, 水风比火风低得多, 已弃用
+    #kaz_q_pyro = 0;
+    #kazuha burst, attack; # 水风, 扩水
+    #bennett burst, skill; # 班 qe 转火底
+    #kazuha dash; # 冲刺出雨帘剑范围避免挂水影响附着
+    #set_player_pos(0, -2);
+    #kazuha skill[hold=1], high_plunge; # 长 e 消元素下落扩火 
+    
+    # 万叶大招火风双扩流程
+    kaz_q_pyro = 1;
+    bennett burst, attack; 
+    while .bennett.skill.cd { bennett attack; } 
+    bennett skill, attack; # 穿插 a 避免进入火底
+    kazuha burst; # 扩水并大招染火
+    kazuha skill, high_plunge; # 下落扩火
+  } else {
+    # 万叶无大招双扩流程
+    kaz_q_pyro = 1;
+    bennett burst, attack, skill, attack; # 穿插 a 避免进入火底
+    bennett dash; # 冲刺出雨帘剑范围避免下落瞬间挂水影响附着
+    set_player_pos(0, -2);
+    kazuha skill[hold=1], high_plunge; # 班圈万叶长 e 达成起跳扩水下落扩火
+  }
+  
+  xiangling attack;
+  set_player_pos(0, 0); # 香菱大招自动位移靠近怪
+  xiangling burst;
+  xiangling skill[a4_delay=rand() * 800 - 200], dash; # 假设玩家随机捡到辣椒
+  if !kaz_q_pyro { xiangling attack; } # 非火风流程可以偷个平 a
+  
+  if .xingqiu.weapon == .keys.weapon.sacrificialsword {
+    is_sacsword = 1;
+    xingqiu skill, dash; 
+    if .xingqiu.skill.ready {
+      sacsword_proc = 1;
+      if kaz_q_pyro { xingqiu attack; } # 行秋 q 慢于行秋 e 附着, 偷一个 a 无妨
+      xingqiu skill, dash, attack:3; 
+    } else {
+      sacsword_proc = 0;
+      xingqiu attack:3; # 平 a 3 下吃自己球
+    }
+  } else {
+    xingqiu skill, dash, attack:3;
+  }
+
+  benn_skill();
+  xiangling attack:3; 
+  kazuha skill, high_plunge; 
+  # 非祭礼剑, 或者祭礼剑触发, 需要这里多 a 两下浪费时间对轴, 顺便万叶吃自己球
+  if !is_sacsword || sacsword_proc { kazuha attack:2; }
+  xingqiu attack:3;
+  benn_skill();
+  
+  # 充能阶段
+  # 上次打球过程中玩家能很明显看到香菱能量情况, 这里假设玩家能预判差点充满的情况, 少一次切人
+  while .xiangling.energy + 10 < .xiangling.energymax 
+    || .xingqiu.energy < .xingqiu.energymax 
+    || .bennett.energy < .bennett.energymax {
+    benn_funnel();
   }
 }

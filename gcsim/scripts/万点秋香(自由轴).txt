@@ -1,0 +1,107 @@
+# 这个轴的手法会按照一些常见的玩家操作去模拟，主要包括：
+# 起手行秋开大同时万叶开大染水风，每个技能之间穿插平 a 触发行秋水剑；
+# 班尼特 qe 切香菱 qe 吃球，行秋 eqe 吃球，香菱和行秋的 e 衔接闪避取消后摇；
+# 然后在保证香菱站班圈开大的基础上，所有人有 eq 尽快施放。
+# 即便如此，仍然推荐堆至少如下的充能，避免因切人打球阶段过长导致模拟结果骤降：
+# 香菱：180%，行秋：170%，班尼特：170%
+
+kazuha char lvl=90/90 cons=0 talent=9,9,9;
+kazuha add weapon="favoniussword" refine=5 lvl=90/90;
+#kazuha add weapon="ironsting" refine=5 lvl=90/90;
+kazuha add set="viridescentvenerer" count=5;
+kazuha add stats hp=4780 atk=311 em=561 ;
+kazuha add stats def%=0.2 hp%=0.2 atk%=0.1 er=0.3 em=120 cr=0.198 cd=0.264;
+
+xiangling char lvl=90/90 cons=6 talent=9,9,9;
+xiangling add weapon="thecatch" refine=5 lvl=90/90;
+xiangling add set="emblemofseveredfate" count=5;
+xiangling add stats hp=4780 atk=311 atk%=0.466 pyro%=0.466 cr=0.311 ;
+xiangling add stats def%=0.2 hp%=0.2 atk%=0.3 er=0.1 em=80 cr=0.231 cd=0.726;
+
+xingqiu char lvl=90/90 cons=6 talent=9,9,9;
+#xingqiu add weapon="favoniussword" refine=5 lvl=90/90;
+xingqiu add weapon="sacrificialsword" refine=5 lvl=90/90;
+xingqiu add set="no" count=5;
+xingqiu add stats hp=4780 atk=311 atk%=0.466 hydro%=0.466 cr=0.311 ; #main
+xingqiu add stats def%=0.2 hp%=0.2 atk%=0.2 er=0.1 em=120 cr=0.231 cd=0.726;
+
+bennett char lvl=90/90 cons=6 talent=9,9,9; 
+bennett add weapon="thealleyflash" refine=1 lvl=90/90;
+bennett add set="instructor" count=4;
+bennett add stats hp=3571 atk=232 er=0.518 hp%=0.466 heal=0.359;
+bennett add stats def%=0.2 hp%=0.4 atk%=0.2 er=0.3 em=40 cr=0.132 cd=0.264;
+
+target lvl=100 resist=0.1 radius=2 pos=0,2.4;
+options swap_delay=12 duration=270 iteration=500;
+energy every interval=480,720 amount=1;
+
+fn benn_funnel() {
+  if !.bennett.onfield { bennett attack; } # for swap cd
+  while .bennett.skill.cd { bennett attack; } 
+  bennett skill;
+  if .xiangling.energy < .xiangling.energymax {
+    if .xiangling.skill.ready { 
+      xiangling skill[a4_delay=rand() * 800 - 200], dash, attack:2; # 假设玩家随机捡到辣椒
+    } else { 
+      xiangling attack: 3; 
+    }
+  } else if .xingqiu.energy < .xingqiu.energymax {
+    xingqiu attack:3;
+  } else if .bennett.energy < .bennett.energymax {
+    bennett attack:3;
+  } 
+}
+
+active xingqiu;
+
+while 1 {
+  if .xingqiu.burst.ready {
+    if !.xingqiu.onfield {
+      xingqiu burst, attack:2;
+    } else {
+      xingqiu burst, attack;
+    }
+    if .kazuha.burst.ready { kazuha burst, attack; }
+  } 
+  else if .bennett.burst.ready { 
+    bennett attack, burst, attack;
+    if .bennett.skill.ready { bennett skill; }
+    while .bennett.swap.cd { bennett attack; }
+  } else if .xiangling.burst.ready && .status.bennettburst {
+    xiangling burst, attack;
+    if .xiangling.skill.ready {
+      xiangling skill[a4_delay=rand() * 800 - 200], dash, attack; # 假设玩家随机捡到辣椒 
+    } 
+  } else if .xingqiu.skill.ready {
+    if .xingqiu.burst.ready { # 满能量 eqe 操作
+      xingqiu skill, dash, burst;
+    } else {
+      xingqiu skill, dash, attack;
+    }
+    if .xingqiu.skill.ready { # 意味着触发了祭礼
+      xingqiu skill, dash; 
+      # 第一次 e 的球已经吃到, 如果充满就开大, 即非满能量 eqe 操作
+      if .xingqiu.burst.ready { 
+        xingqiu burst, attack:2; 
+      } else {
+        # 没充满就正常 a 3 下吃球
+        xingqiu attack:3;  
+      }
+    } else { 
+      # 没触发祭礼, 正常 a 3 下吃球
+      xingqiu attack:3; 
+    }
+    # 吃完球如果充满也应该开大
+    if .xingqiu.burst.ready { xingqiu burst; }
+  } else if .kazuha.skill.ready {
+    kazuha skill, high_plunge;
+    if .xingqiu.status.xingqiuburst { kazuha attack; }
+  } else if .kazuha.burst.ready { 
+    kazuha burst; 
+    if .xingqiu.status.xingqiuburst { kazuha attack; }
+  } else if .xiangling.skill.ready {
+    xiangling skill, dash, attack:2;
+  } else {
+    benn_funnel();
+  }
+}
