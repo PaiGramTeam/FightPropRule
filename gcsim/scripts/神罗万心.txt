@@ -1,4 +1,4 @@
-# 推荐充能：绫华：110-130%，罗莎莉亚：140-160%，心海：180-200%，万叶：任意。
+# 推荐充能：绫华：110-130%，罗莎莉亚：140-160%，心海：任意，万叶：任意。
 # 强烈推荐罗莎莉亚携带西风枪，携带其他武器基本失去罗莎莉亚入队的意义。
 # 如果罗莎莉亚携带非西风枪武器，万叶则推荐携带高精炼西风剑或西福斯的月光。
 
@@ -56,6 +56,8 @@ fn recharge() {
   }
 }
 
+let kazuha_burst = 0;
+
 active rosaria;
 
 while 1 {
@@ -80,21 +82,27 @@ while 1 {
     }
   }
   
-  if .kazuha.skill.ready { kazuha skill, high_plunge; }
+  if .kazuha.burst.ready { 
+    kazuha skill, high_plunge;
+    kazuha burst; 
+    kazuha_burst = 1;
+  } else {
+    kazuha skill, high_plunge;
+    kazuha_burst = 0;
+  }
   kokomi skill, dash;
   ayaka dash, skill, attack, burst;
   rosaria skill;
   ayaka dash, attack, charge, attack, charge;
   kazuha skill, high_plunge;
-  if .kokomi.burst.ready { 
-    kokomi burst; 
+  rosaria skill;
+  if !kazuha_burst {
     ayaka skill, dash, attack, charge, attack:2, charge;
   } else {
-    # 心海没开大的话绫华 e 要后置一点, 后面正常 az
-    ayaka dash, skill, attack, charge, attack, charge, dash, attack, charge;
+    ayaka skill, dash, attack, charge, attack, charge, dash, attack, charge;
   }
   
-  
+
   while .ayaka.energy + 10 < .ayaka.energymax {
     recharge();
   }
