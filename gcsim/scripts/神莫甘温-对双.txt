@@ -1,0 +1,88 @@
+# 推荐充能：绫华：120-130%，甘雨：110-120%，温迪：190%-220%，莫娜：200-220%
+# 强烈推荐温迪携带西风弓，如果温迪携带其他武器，则绫华甘雨需要增加 20% 充能。
+
+ayaka char lvl=90/90 cons=0 talent=9,9,9;
+ayaka add weapon="finaleofthedeep" refine=5 lvl=90/90;
+ayaka add set="blizzardstrayer" count=4;
+ayaka add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cd=0.622;
+ayaka add stats atk%=0.2 er=0.33 cr=0.363 cd=0.462; 
+
+ganyu char lvl=90/90 cons=0 talent=9,9,9;
+ganyu add weapon="amosbow" refine=1 lvl=90/90;
+ganyu add set="blizzardstrayer" count=4;
+ganyu add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cd=0.622; 
+ganyu add stats atk%=0.4 er=0.11 cr=0.231 cd=0.726;
+
+venti char lvl=90/90 cons=0 talent=9,9,9;
+venti add weapon="favoniuswarbow" refine=5 lvl=90/90;
+venti add set="viridescentvenerer" count=4;
+venti add stats hp=4780 atk=311 em=187 em=187 cr=0.311;
+venti add stats atk%=0.2 er=0.11 em=120 cr=0.231 cd=0.726;
+
+mona char lvl=90/90 cons=0 talent=9,9,9;
+mona add weapon="prototypeamber" refine=5 lvl=90/90;
+#mona add weapon="thrillingtalesofdragonslayers" refine=5 lvl=90/90;
+mona add set="noblesseoblige" count=4;
+mona add stats hp=4780 atk=311 er=0.518 atk%=0.466 heal=0.359;
+mona add stats atk%=0.3 er=0.55 cr=0.264 cd=0.132;
+
+#词条分布
+#        atk%  em  er  cr cd
+#ayaka    4    0   6   11  7
+#ganyu    8    0   2   7   11
+#venti    4    6   2   7   11
+#mona     6    0   10  8   2
+
+
+# 模拟当前充能最差环境, 12-3 水形幻人, 每 33% 血量掉 3 元素微粒, 对于非水系角色等于 1.5 微粒
+target lvl=100 resist=0.1 radius=1 pos=-1,1.5 hp=3050301 particle_threshold=1016767 particle_drop_count=1.5;
+target lvl=100 resist=0.1 radius=1 pos=1,1.5 hp=3050301 particle_threshold=1016767 particle_drop_count=1.5;
+options swap_delay=12 iteration=500;
+
+fn ayaka_on_field() {
+  ayaka dash;
+  if .ayaka.skill.ready { ayaka skill; }
+  ayaka attack, charge;
+  if .ayaka.skill.ready { ayaka skill; }
+  ayaka attack, charge;
+  if .ayaka.skill.ready { ayaka skill; }
+}
+
+fn recharge_ayaka() {
+  if .venti.skill.ready {
+    venti skill, attack;
+    ayaka dash, attack, charge;
+  } else {
+    ayaka_on_field();
+  }
+}
+
+active ganyu;
+
+while 1 {
+  ganyu skill;
+  # 甘雨 e 会位移, 下同
+  set_player_pos(0, -4);
+  ganyu burst;
+  if .venti.skill.ready { venti skill; }
+  venti burst;
+  mona burst, skill;
+  # 上面位移过, 冲刺回近战距离用技能
+  ayaka dash;
+  set_player_pos(0, 0);
+  if .ayaka.skill.ready { ayaka skill; }
+  ayaka attack, burst;
+  ganyu skill;
+  set_player_pos(0, -4);
+  ganyu aim;
+  venti skill, attack;
+  ganyu aim:2;
+  # 假设蓄力箭过程中移动回原位
+  set_player_pos(0, 0);
+  ayaka skill, dash, attack, charge;
+  
+  # 因为循环开始的流程还有很多 e 技能打球, 这里充能的判断阈值给很低
+  while .ayaka.energy + 30 < .ayaka.energymax {
+    recharge_ayaka();
+  }
+}
