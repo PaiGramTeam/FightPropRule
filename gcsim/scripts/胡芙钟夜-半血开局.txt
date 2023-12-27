@@ -1,0 +1,93 @@
+# 推荐充能: 
+# 胡桃：一般 110-120%，但保证其他输出词条前提下副词条充能越多越好。
+# 夜兰：0 命只推荐西风弓，180-190%，1 命 140-150%。
+# 芙宁娜：西风剑 170-180%，非西风 +30%。
+# 钟离：无要求，但推荐携带西风枪，否则夜兰芙宁娜 +10%。
+
+hutao char lvl=90/90 cons=0 talent=9,9,9 +params=[start_hp%=50];
+hutao add weapon="dragonsbane" refine=5 lvl=90/90;
+hutao add set="crimsonwitchofflames" count=4;
+hutao add stats hp=4780 atk=311 hp%=0.466 pyro%=0.466 cr=0.311;
+hutao add stats hp%=0.2 atk%=0.1 em=80 er=0.11 cr=0.33 cd=0.528;
+
+yelan char lvl=90/90 cons=0 talent=9,9,9 +params=[start_hp%=50];
+yelan add weapon="favoniuswarbow" refine=5 lvl=90/90;
+yelan add set="emblemofseveredfate" count=4;
+yelan add stats hp=4780 atk=311 hp%=0.466 hydro%=0.4660 cr=0.311;
+yelan add stats hp%=0.4 er=0.11 cr=0.198 cd=0.792;
+
+furina char lvl=90/90 cons=0 talent=9,9,9 +params=[start_hp%=50];
+furina add weapon="fleuvecendreferryman" refine=5 lvl=90/90;
+furina add set="goldentroupe" count=4;
+furina add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cd=0.622;
+furina add stats hp%=0.3 er=0.22 cr=0.363 cd=0.462;
+
+zhongli char lvl=90/90 cons=0 talent=9,9,9 +params=[start_hp%=50];
+zhongli add weapon="favoniuslance" refine=5 lvl=90/90;
+zhongli add set="tenacityofthemillelith" count=4;
+zhongli add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cr=0.311;
+zhongli add stats hp%=0.2 er=0.33 atk%=0.1 cr=0.231 cd=0.726;
+
+#词条分布
+#         hp%  atk%  em  er  cr cd
+#hutao     4    2    4   2   10  8
+#yelan     8    0    0   2   6   12
+#furina    6    0    0   4   11  7
+#zhongli   4    2    0   6   7   11
+
+# 模拟当前充能最差环境, 12-3 水形幻人, 每 33% 血量掉 3 元素微粒, 对于非水系角色等于 1.5 微粒
+target lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=3050301 particle_threshold=1016767 particle_drop_count=1.5;
+options swap_delay=12 iteration=1000;
+
+fn hutao_onfiled() {
+  hutao skill;
+  if .hutao.cons < 1 {
+    for let i = 0; i < 8; i = i + 1 {
+      hutao attack:2, charge, jump;
+    }
+  } else {
+    for let i = 0; i < 10; i = i + 1 {
+      hutao attack:2, charge, dash;
+    }
+  }
+}
+
+let hutao_burst = 1;
+
+active furina;
+while 1 {
+  furina skill;
+  if .furina.burst.ready { furina burst; }
+  zhongli attack, skill[hold=1];
+  if !hutao_burst {
+    if .furina.cons < 6 {
+      if .zhongli.burst.ready { zhongli burst; } else { zhongli attack:4; }
+    } else {
+      # 6 命芙宁娜的特殊普攻
+      furina attack:4;
+    } 
+  }
+  if .yelan.burst.ready { yelan burst, attack; }
+  while .yelan.skill.cd { yelan attack; }
+  yelan skill;
+  if .yelan.cons < 1 {
+    if .yelan.skill.ready { yelan attack, skill; } # 以防某些用户带了祭礼弓
+    hutao_onfiled();
+    yelan skill, attack;
+  } else {
+    yelan attack, skill;
+    hutao_onfiled();
+  }
+  if .hutao.burst.ready {
+    hutao burst;
+    hutao_burst = 1;
+  } else {
+    if .yelan.cons < 6 {
+      hutao_burst = 0;
+    } else {
+      # 6 命夜兰可以趁胡桃没大把特殊破局打出去
+      yelan attack:4;
+      hutao_burst = 1;
+    }
+  }
+}
