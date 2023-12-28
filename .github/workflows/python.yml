@@ -33,6 +33,4 @@ jobs:
           author_email: github-actions[bot]@users.noreply.github.com
           push: 'origin remote --force'
           new_branch: 'remote'
-          message: ':sparkles: Update gcsim scripts'
-          add: |
-            'gcsim.json'
+          message: ':sparkles: Update resources'
