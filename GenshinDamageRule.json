@@ -1305,11 +1305,34 @@
                 "index": 13,
                 "damage_key": "normal",
                 "transformative_damage_key": null
+            },
+            {
+                "name": "爆发伤害 - 蒲公英之风",
+                "index": 10,
+                "damage_key": "normal",
+                "transformative_damage_key": null
             }
         ],
         "config": null,
         "config_skill": null,
-        "config_weapon": null,
+        "config_weapon": {
+            "FinaleOfTheDeep": {
+                "rate1": 1.0,
+                "rate2": 1.0
+            },
+            "FleuveCendreFerryman": {
+                "rate": 0.4
+            },
+            "XiphosMoonlight": {
+                "rate": 1.0
+            },
+            "TheDockhandsAssistant": {
+                "stack": 0.5
+            },
+            "FreedomSworn": {
+                "rate": 0.6
+            }
+        },
         "artifact_config": null
     },
     "瑶瑶": {
@@ -1652,6 +1675,18 @@
             },
             {
                 "name": "闪电伤害 - 斫雷",
+                "index": 14,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "二层伤害 - 捉浪 - 超激化",
+                "index": 12,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "闪电伤害 - 斫雷 - 超激化",
                 "index": 14,
                 "damage_key": "aggravate",
                 "transformative_damage_key": null
@@ -2663,5 +2698,172 @@
             }
         },
         "artifact_config": {}
+    },
+    "夏洛蒂": {
+        "skills": [
+            {
+                "name": "施放治疗量 - 定格·全方位确证",
+                "index": 12,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "相机持续治疗量 - 定格·全方位确证",
+                "index": 14,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": {
+            "talent2_fontaine_count": 1,
+            "talent2_non_fontaine_count": 2,
+            "c2_count": 1,
+            "c2_rate": 0.5
+        },
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": {
+            "config_noblesse_oblige": {
+                "rate": 0.55
+            },
+            "config_tenacity_of_the_millelith": {
+                "rate": 0.7
+            },
+            "config_instructor": {
+                "rate": 0.4
+            }
+        }
+    },
+    "迪希雅": {
+        "skills": [
+            {
+                "name": "领域伤害 - 熔铁流狱",
+                "index": 11,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "领域伤害 - 熔铁流狱 - 蒸发",
+                "index": 11,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "炽鬃拳伤害 - 炎啸狮子咬",
+                "index": 12,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "焚落踢伤害 - 炎啸狮子咬",
+                "index": 13,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "炽鬃拳伤害 - 炎啸狮子咬 - 蒸发",
+                "index": 12,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "焚落踢伤害 - 炎啸狮子咬 - 蒸发",
+                "index": 13,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "WolfsGravestone": {
+                "rate": 0.2
+            },
+            "TheUnforged": {
+                "shield_rate": 0.0,
+                "stack": 3.0
+            },
+            "SongOfBrokenPines": {
+                "rate": 0.0
+            },
+            "Akuoumaru": {
+                "energy": 240
+            },
+            "SerpentSpine": {
+                "stack": 0.0
+            },
+            "MakhairaAquamarine": {
+                "rate": 1.0
+            },
+            "BeaconOfTheReedSea": {
+                "rate_atk": 1.0,
+                "rate_hp": 1.0
+            },
+            "MailedFlower": {
+                "rate": 1.0
+            },
+            "TalkingStick": {
+                "rate1": 1.0,
+                "rate2": 0.0
+            },
+            "PortablePowerSaw": {
+                "stack": 3.0
+            }
+        },
+        "artifact_config": {
+            "config_vourukashas_glow": {
+                "stack": 5.0
+            },
+            "config_tenacity_of_the_millelith": {
+                "rate": 1.0
+            },
+            "config_noblesse_oblige": {
+                "rate": 0.6
+            },
+            "config_marechaussee_hunter": {
+                "stack": 1.0
+            },
+            "config_golden_troupe": {
+                "rate": 1.0
+            },
+            "config_gilded_dreams": {
+                "same_count": 1,
+                "diff_count": 2,
+                "rate": 1.0
+            },
+            "config_flower_of_paradise_lost": {
+                "stack": 4.0
+            },
+            "config_crimson_witch_of_flames": {
+                "level": 2.0
+            }
+        }
+    },
+    "托马": {
+        "skills": [
+            {
+                "name": "烈绽放伤害",
+                "index": 11,
+                "damage_key": null,
+                "transformative_damage_key": "hyper_bloom"
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": {
+            "DragonsBane": {
+                "rate": 1.0
+            }
+        },
+        "artifact_config": {
+            "config_gilded_dreams": {
+                "same_count": 0,
+                "diff_count": 3,
+                "rate": 1.0
+            },
+            "config_flower_of_paradise_lost": {
+                "stack": 5.0
+            }
+        }
     }
 }
