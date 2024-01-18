@@ -1,0 +1,111 @@
+tighnari char lvl=90/90 cons=0 talent=9,9,9;
+tighnari add weapon="viridescenthunt" refine=1 lvl=90/90;
+tighnari add set="wandererstroupe" count=4;
+tighnari add stats hp=4780 atk=311 em=187 dendro%=0.466 cd=0.622;
+tighnari add stats atk%=0.1 em=120 er=0.22 cr=0.396 cd=0.396;	
+                                                              
+yae char lvl=90/90 cons=0 talent=9,9,9;
+yae add weapon="widsith" refine=5 lvl=90/90;
+yae add set="goldentroupe" count=4;
+yae add stats hp=4780 atk=311 atk%=0.466 electro%=0.466 cr=0.311;
+yae add stats atk%=0.1 er=0.11 em=160 cr=0.297 cd=0.594;
+
+nahida char lvl=90/90 cons=0 talent=9,9,9;
+nahida add weapon="wanderingevenstar" refine=1 lvl=90/90;
+nahida add set="deepwoodmemories" count=4;
+nahida add stats hp=4780 atk=311 em=187 em=187 em=187 ;
+nahida add stats atk%=0.3 em=160 er=0.33 cr=0.132 cd=0.396 ;    
+                                            
+zhongli char lvl=90/90 cons=0 talent=9,9,9 ;
+zhongli add weapon="favoniuslance" refine=5 lvl=90/90;
+zhongli add set="tenacityofthemillelith" count=4;
+zhongli add stats hp=4780 atk=311 hp%=0.466 geo%=0.466 cr=0.311;
+zhongli add stats hp%=0.3 er=0.22 atk%=0.1 cr=0.231 cd=0.726;           
+ 
+#词条分布
+#          hp%  atk%  em  er  cr  cd
+#tighnari   0    2    6   4   12  6
+#yae        0    2    8   2   9   9
+#nahida     0    6    8   6   4   6
+#zhongli    6    2    0   4   11  7
+
+# 模拟当前充能最差环境, 12-3 水形幻人, 每 33% 血量掉 3 元素微粒, 对于非水系角色等于 1.5 微粒
+target lvl=100 resist=0.1 radius=2 pos=0,2.4 hp=3050301 particle_threshold=1016767 particle_drop_count=1.5;
+options swap_delay=12 iteration=1000;
+
+fn tighnari_aim() {
+  while .tighnari.status.vijnanasuffusion {
+    tighnari aim;
+    if .tighnari.burst.ready { tighnari burst; }
+  }
+  if .tighnari.burst.ready { tighnari burst; }
+}
+
+
+let tighnari_cd = 0;
+
+fn tighnari_onfield() {
+  switch 1 {
+    # e 好了就直接打 ea(q)aa
+    case .tighnari.skill.ready:
+      tighnari skill;
+      tighnari_aim();
+      tighnari_cd = 1;
+    # e 没好, 开 q 看看能不能等到 e 冷却打一波
+    case !.tighnari.skill.ready && .tighnari.burst.ready:
+      tighnari burst;
+      if .tighnari.skill.ready {
+        tighnari skill;
+        tighnari_aim();
+        tighnari_cd = 1;
+      } else if .tighnari.skill.cd <= 90 {
+        while .tighnari.skill.cd { tighnari attack; }
+        tighnari skill;
+        tighnari_aim();
+        tighnari_cd = 1;
+      } else {
+        tighnari_cd = 0;
+      }
+    # 啥都没有, e 快好就 a 几下, e 没好就切神子重击
+    case !.tighnari.skill.ready && !.tighnari.burst.ready:
+      if .tighnari.skill.cd <= 90 {
+        while .tighnari.skill.cd { tighnari attack; }
+        tighnari skill;
+        tighnari_aim();
+        tighnari_cd = 1;
+      } else {
+        yae attack, charge;
+        tighnari_cd = 0;
+      }
+  }
+}
+
+active tighnari;
+# 首轮存箭的固定循环
+tighnari skill;
+zhongli skill[hold=1], dash;
+yae attack, skill:3;
+nahida skill, attack, charge, burst;
+tighnari aim:3, burst, skill, aim:3;
+yae burst, attack, skill:3;
+
+while 1 {
+  zhongli skill[hold=1], dash;
+  nahida skill;
+  if .nahida.burst.ready { nahida burst; } else { nahida attack, charge; }
+  tighnari_onfield();
+  if .yae.burst.ready { 
+    yae burst; 
+  } else if .nahida.burst.ready {
+    nahida burst;
+  } else if .tighnari.burst.ready {
+    tighnari burst;
+  } else if .zhongli.burst.ready {
+    zhongli burst;
+  } else {
+    yae attack, charge;
+  }
+  # 上轮如果输出过这轮就可以跳过了
+  if !tighnari_cd { tighnari_onfield(); }
+  yae attack, skill:3;
+}
