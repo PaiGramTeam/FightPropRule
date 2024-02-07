@@ -1,0 +1,68 @@
+# 推荐充能下限：绫华 133%，芙宁娜 157%，万叶 180%，夏洛蒂 200%（西风夏洛蒂暴击率 75%）
+# 西风夏暴击率越低，全队充能压力越大。
+# 如果夏洛蒂携带昔时之歌套，全队总伤害略低于宗室套，但也能用。
+# 绫华开大后均为等待 cd 的时间，只需及时开出第二个绫华 e、用万叶或夏洛蒂给绫华打球，
+# 剩余时间则由绫华 aac 补充伤害。具体的轴对 DPS 影响较小，可自由安排，确保及时开出下一个大招即可
+
+ayaka char lvl=90/90 cons=0 talent=9,9,9;
+ayaka add weapon="finaleofthedeep" refine=5 lvl=90/90;
+ayaka add set="marechausseehunter" count=4;
+ayaka add stats hp=4780 atk=311 atk%=0.466 cryo%=0.466 cd=0.622;
+ayaka add stats atk%=0.2 er=0.33 cr=0.396 cd=0.396;
+
+furina char lvl=90/90 cons=0 talent=2,9,9;
+furina add weapon="fleuvecendreferryman" refine=5 lvl=90/90;
+furina add set="goldentroupe" count=4;
+furina add stats hp=4780 atk=311 hp%=0.466 hp%=0.466 cd=0.622;
+furina add stats hp%=0.3 er=0.22 cr=0.396 cd=0.396;
+
+kazuha char lvl=90/90 cons=0 talent=9,9,9;
+kazuha add weapon="favoniussword" refine=5 lvl=90/90;
+kazuha add set="viridescentvenerer" count=4;
+kazuha add stats hp=4780 atk=311 em=187 em=187 em=187;
+kazuha add stats er=0.44 em=160 cr=0.264 cd=0.132;
+
+charlotte char lvl=90/90 cons=6 talent=9,9,9;
+charlotte add weapon="favoniuscodex" refine=5 lvl=90/90;
+charlotte add set="noblesseoblige" count=4;
+charlotte add stats hp=4780 atk=311 er=0.518 atk%=0.466 cr=0.311;
+charlotte add stats atk%=0.3 er=0.22 cr=0.396 cd=0.396;
+
+# 词条分布
+#           hp% atk%  em  er  cr  cd
+# ayaka     0   4     0   6   12  6
+# furina    6   0     0   4   12  6
+# kazuha    0   0     8   8   8   2
+# charlotte 0   6     0   4   12  6
+
+# 模拟当前充能最差环境, 12-3 水形幻人, 每 33% 血量掉 3 元素微粒, 对于非水系角色等于 1.5 微粒
+target lvl=100 resist=0.1 radius=2 pos=0,2.4 particle_threshold=1016767 particle_drop_count=1.5;
+options swap_delay=12 iteration=1000 duration=270;
+
+active ayaka;
+
+ayaka dash;
+
+while 1 {
+  if .kazuha.burst.ready {
+    kazuha burst;
+  }
+  kazuha skill, high_plunge;
+  furina skill, dash, burst;
+  if .charlotte.skill.ready {
+    charlotte skill, attack;
+  } else {
+    charlotte attack;
+  }
+  charlotte burst;
+  ayaka skill, dash, burst;
+  kazuha skill, high_plunge;
+  ayaka dash, attack:2, charge, attack:2, charge;
+  if .charlotte.skill.ready {
+    charlotte skill, attack;
+  } else {
+    ayaka attack;
+    kazuha skill, high_plunge;
+  } 
+  ayaka skill, dash, attack: 2, charge, attack;
+}
