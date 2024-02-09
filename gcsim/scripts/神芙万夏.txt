@@ -64,5 +64,5 @@ while 1 {
     ayaka attack;
     kazuha skill, high_plunge;
   } 
-  ayaka skill, dash, attack: 2, charge, attack;
+  ayaka skill, dash, attack:2, charge, attack;
 }
