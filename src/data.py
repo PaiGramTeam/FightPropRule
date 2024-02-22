@@ -41,6 +41,7 @@ class Base:
                     if not str(i.get("id", 0)).startswith(ignore_id_start)
                 }
             )
+            self.character.sort()
 
 
 class Genshin(Base):
@@ -120,6 +121,7 @@ class Starrail(Base):
                 "开拓者·存护",
             ]
         )
+        self.character.sort()
         self.save_data_to_file(starrail_avatars_path)
 
 
