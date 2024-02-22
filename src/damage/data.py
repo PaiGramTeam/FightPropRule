@@ -1,9 +1,11 @@
 import json
 from typing import Dict, Any
 
+from .artifact import artifact
 from .character import character
-from .models import CharacterDamage, CharacterSkill, CharacterConfig, WeaponConfig
+from .models import CharacterDamage, CharacterConfig, WeaponConfig
 from .skill_data import SkillData
+from .weapon import weapon
 
 
 class Data:
@@ -11,6 +13,7 @@ class Data:
         self.file_name = "GenshinDamageRule.json"
         self.file_data: Dict[str, CharacterDamage] = self.load()
         self.patch_character()
+        self.add_new_default_config()
 
     def load(self) -> Dict[str, CharacterDamage]:
         with open(self.file_name, "r", encoding="utf-8") as f:
@@ -38,6 +41,33 @@ class Data:
                     skill.transformative_damage_key = transformative_damage_key_map[
                         skill.index
                     ]
+
+    def add_new_default_config(self):
+        # 版本更新时，自动添加新的默认配置。只处理 config_weapon artifact_config
+        self.add_new_default_config_weapon()
+        self.add_new_default_config_artifact()
+
+    def add_new_default_config_weapon(self):
+        for c_name, v in self.file_data.items():
+            if v.config_weapon:
+                for w_name, w_value in v.config_weapon.items():
+                    w = weapon.get_by_name(w_name)
+                    if not w:
+                        continue
+                    for config in w.config:
+                        if config.name not in w_value:
+                            w_value[config.name] = config.default
+
+    def add_new_default_config_artifact(self):
+        for c_name, v in self.file_data.items():
+            if v.artifact_config:
+                for a_name, a_value in v.artifact_config.items():
+                    a = artifact.get_by_name(a_name)
+                    if not a:
+                        continue
+                    for config in a.config:
+                        if config.name not in a_value:
+                            a_value[config.name] = config.default
 
     def dump(self) -> Dict[str, Dict]:
         new_data = {}

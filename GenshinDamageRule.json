@@ -366,7 +366,8 @@
                 "full_rate": 0.0
             },
             "CalamityQueller": {
-                "stack": 6.0
+                "stack": 6.0,
+                "backend_rate": 0.0
             },
             "StaffOfHoma": {
                 "be50_rate": 0.0
@@ -1900,7 +1901,8 @@
                 "rate": 1.0
             },
             "KeyOfKhajNisut": {
-                "stack": 3.0
+                "stack": 3.0,
+                "rate": 0.5
             },
             "ToukabouShigure": {
                 "rate": 0.5
@@ -2156,7 +2158,8 @@
                 "rate": 1.0
             },
             "KeyOfKhajNisut": {
-                "stack": 3.0
+                "stack": 3.0,
+                "rate": 0.5
             },
             "WolfFang": {
                 "e_stack": 1.0,

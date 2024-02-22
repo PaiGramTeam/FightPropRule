@@ -26,5 +26,8 @@ class Artifact:
         self.artifacts = artifacts
         self.artifact_config_map = artifact_config_map
 
+    def get_by_name(self, name: str) -> ArtifactModel:
+        return self.artifact_config_map.get(name)
+
 
 artifact = Artifact()
