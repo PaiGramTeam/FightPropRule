@@ -34,3 +34,4 @@ jobs:
           push: 'origin remote --force'
           new_branch: 'remote'
           message: ':sparkles: Update resources'
+          fetch: false
