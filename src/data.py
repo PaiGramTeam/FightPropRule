@@ -33,15 +33,11 @@ class Base:
             ignore_id_start = "-1"
         res = get(api)
         if res.status_code == 200:
-            data = res.json()
-            self.character = list(
-                {
-                    i.get("name")
-                    for i in data.get("data", {}).get("items", {}).values()
-                    if not str(i.get("id", 0)).startswith(ignore_id_start)
-                }
-            )
-            self.character.sort()
+            data: Dict = res.json()
+            items: List[Dict] = list(data.get("data", {}).get("items", {}).values())
+            ch_map = {i.get("name"): i.get("release", 0) for i in items if not str(i.get("id", 0)).startswith(ignore_id_start)}
+            ch_sort = sorted(ch_map.items(), key=lambda x: x[1])
+            self.character = [i[0] for i in ch_sort]
 
 
 class Genshin(Base):
@@ -119,9 +115,9 @@ class Starrail(Base):
             [
                 "开拓者·毁灭",
                 "开拓者·存护",
+                "开拓者·同谐",
             ]
         )
-        self.character.sort()
         self.save_data_to_file(starrail_avatars_path)
 
 

@@ -2868,5 +2868,48 @@
                 "stack": 5.0
             }
         }
+    },
+    "嘉明": {
+        "skills": [
+            {
+                "name": "四段伤害 - 普通攻击·刃爪悬星 - 蒸发",
+                "index": 3,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "低空坠地冲击伤害 - 普通攻击·刃爪悬星 - 蒸发",
+                "index": 7,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "下落攻击·踏云献瑞伤害 - 瑞兽登高楼 - 蒸发",
+                "index": 9,
+                "damage_key": "vaporize",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "下落攻击·踏云献瑞伤害 - 瑞兽登高楼 - 烈绽放",
+                "index": 9,
+                "damage_key": null,
+                "transformative_damage_key": "hyper_bloom"
+            },
+            {
+                "name": "技能治疗量 - 璨焰金猊舞",
+                "index": 11,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": {
+            "hp_above50": false,
+            "c2_rate": 0.0
+        },
+        "config_skill": {
+            "pyro": true
+        },
+        "config_weapon": null,
+        "artifact_config": null
     }
 }

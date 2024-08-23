@@ -45,11 +45,11 @@ def choose_view(page: Page):
                             icon=ft.icons.LOGIN,
                             on_click=genshin,
                         ),
-                        ft.FilledButton(
-                            "Starrail",
-                            icon=ft.icons.LOGIN,
-                            on_click=starrail,
-                        ),
+                        # ft.FilledButton(
+                        #     "Starrail",
+                        #     icon=ft.icons.LOGIN,
+                        #     on_click=starrail,
+                        # ),
                         ft.FilledButton(
                             "GenshinDamage",
                             icon=ft.icons.LOGIN,
