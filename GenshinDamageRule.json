@@ -2911,5 +2911,87 @@
         },
         "config_weapon": null,
         "artifact_config": null
+    },
+    "赛索斯": {
+        "skills": [
+            {
+                "name": "一段伤害 - 普通攻击·王家苇箭术",
+                "index": 0,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "三段伤害 - 普通攻击·王家苇箭术",
+                "index": 2,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "贯影箭超载伤害 - 一段蓄力攻击·王家苇箭术",
+                "index": 7,
+                "damage_key": null,
+                "transformative_damage_key": "overload"
+            },
+            {
+                "name": "技能超激化伤害 - 古仪·鸣砂掣雷",
+                "index": 12,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "瞑弦矢-3超激化伤害 - 秘仪·瞑光贯影",
+                "index": 5,
+                "damage_key": "aggravate",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
+    },
+    "基尼奇": {
+        "skills": [
+            {
+                "name": "三段伤害 - 普通攻击·夜阳斗技",
+                "index": 2,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "迴猎贯鳞炮伤害 - 悬猎·游骋高狩",
+                "index": 9,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "迴猎贯鳞炮伤害（C2） - 悬猎·游骋高狩",
+                "index": 10,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "迴猎贯鳞炮蔓激化伤害（C6） - 悬猎·游骋高狩",
+                "index": 11,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "技能伤害 - 向伟大圣龙致意",
+                "index": 12,
+                "damage_key": "normal",
+                "transformative_damage_key": null
+            },
+            {
+                "name": "龙息蔓激化伤害 - 向伟大圣龙致意",
+                "index": 13,
+                "damage_key": "spread",
+                "transformative_damage_key": null
+            }
+        ],
+        "config": null,
+        "config_skill": null,
+        "config_weapon": null,
+        "artifact_config": null
     }
 }
